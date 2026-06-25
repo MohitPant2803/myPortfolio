@@ -43,47 +43,14 @@ import ResumeViewer from "@/components/ResumeViewer";
 import { projectsData } from "@/data/projects";
 import { Github, Linkedin } from "@/components/BrandIcons";
 
-const STATUS_MESSAGES = [
-  "BUILDING REEWISE",
-  "TRAINING AI AGENTS",
-  "DEBUGGING LIFE",
-  "SHIPPING FEATURES",
-  "CURRENTLY CODING"
-];
-
-const TERMINAL_COMMANDS = [
-  { cmd: "now_playing", out: "Building ReeWise" },
-  { cmd: "currently_learning", out: "Distributed Systems" },
-  { cmd: "debugging", out: "Race conditions" },
-  { cmd: "next_goal", out: "Ship v1" },
-  { cmd: "coffee", out: "Required" }
-];
-
 export default function Home() {
   const [mounted, setMounted] = useState(false);
   const [copiedText, setCopiedText] = useState("");
   const [contactForm, setContactForm] = useState({ name: "", email: "", message: "" });
   const [formSubmitted, setFormSubmitted] = useState(false);
-  const [statusIdx, setStatusIdx] = useState(0);
-  const [terminalIdx, setTerminalIdx] = useState(0);
 
   useEffect(() => {
     setMounted(true);
-
-    // Rotate top status messages
-    const statusInterval = setInterval(() => {
-      setStatusIdx((prev) => (prev + 1) % STATUS_MESSAGES.length);
-    }, 4500);
-
-    // Rotate terminal commands
-    const terminalInterval = setInterval(() => {
-      setTerminalIdx((prev) => (prev + 1) % TERMINAL_COMMANDS.length);
-    }, 4000);
-
-    return () => {
-      clearInterval(statusInterval);
-      clearInterval(terminalInterval);
-    };
   }, []);
 
   const handleCopy = (text: string, label: string) => {
@@ -780,8 +747,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
-      {/* NOW PAGE / BOARD SECTION */}
+      </section>      {/* NOW PAGE / BOARD SECTION */}
       <section id="now" className="mb-20 scroll-mt-6">
         <div className="border-3 border-black bg-white rounded-2xl p-6 sm:p-10 shadow-[6px_6px_0px_#000] relative">
           {/* Header tag */}
@@ -789,176 +755,82 @@ export default function Home() {
             06. /now
           </div>
 
-          <div className="pt-4 mb-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-            <div>
-              <h3 className="text-2xl font-space-grotesk font-extrabold text-stone-900 flex items-center gap-2">
-                Developer Workspace & Status
-                <Compass className="w-6 h-6 text-orange-600" />
-              </h3>
-              <p className="text-stone-500 font-semibold text-xs mt-1">
-                Active goals, brain downloads, and software pipelines under development.
-              </p>
-            </div>
-            
-            {/* Flashing status indicator */}
-            <div className="flex items-center gap-2 self-start sm:self-center border-2 border-black px-3 py-1 bg-stone-50 rounded-xl shadow-[2px_2px_0px_#000]">
-              <span className="relative flex h-2.5 w-2.5">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
-              </span>
-              <span className="font-mono text-[10px] font-bold text-stone-600 uppercase tracking-wider">
-                {STATUS_MESSAGES[statusIdx]}
-              </span>
-            </div>
+          <div className="pt-4 mb-6">
+            <h3 className="text-2xl font-space-grotesk font-extrabold text-stone-900 flex items-center gap-2">
+              Current Focus & Work Board
+              <Compass className="w-6 h-6 text-orange-600" />
+            </h3>
+            <p className="text-stone-500 font-semibold text-xs mt-1">
+              Active goals, current reads, and software pipelines under development.
+            </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
-            {/* Column 1: What I'm Building */}
-            <div className="border-2 border-black p-5 rounded-2xl bg-white shadow-[4px_4px_0px_#000] flex flex-col justify-between text-left">
-              <div>
-                <h4 className="font-space-grotesk font-black text-sm text-stone-900 border-b-2 border-black pb-2 mb-4 flex items-center gap-2">
-                  <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse border border-black"></span>
-                  <span>What I'm Building</span>
-                </h4>
-                
-                <div className="font-mono text-xs space-y-5">
-                  {/* ReeWise */}
-                  <div className="space-y-1">
-                    <div className="flex justify-between items-center">
-                      <span className="font-extrabold text-stone-900">ReeWise</span>
-                      <span className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-[9px] font-bold border border-black bg-emerald-50 text-emerald-800 uppercase tracking-wider">
-                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
-                        Building
-                      </span>
-                    </div>
-                    <div className="text-[11px] text-stone-500 font-semibold font-space-grotesk leading-none">
-                      Collaborative AI workspace
-                    </div>
-                    <div className="text-emerald-600 font-extrabold pt-1">
-                      ████████░░ 80%
-                    </div>
-                  </div>
-
-                  {/* AI Agents */}
-                  <div className="space-y-1">
-                    <div className="flex justify-between items-center">
-                      <span className="font-extrabold text-stone-900">AI Agents</span>
-                      <span className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-[9px] font-bold border border-black bg-blue-50 text-blue-800 uppercase tracking-wider">
-                        <span className="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse"></span>
-                        In Progress
-                      </span>
-                    </div>
-                    <div className="text-[11px] text-stone-500 font-semibold font-space-grotesk leading-none">
-                      Autonomous workflows
-                    </div>
-                    <div className="text-blue-600 font-extrabold pt-1">
-                      ██████░░░░ 60%
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Column 2: Current Focus */}
-            <div className="border-2 border-black p-5 rounded-2xl bg-white shadow-[4px_4px_0px_#000] flex flex-col justify-center text-left min-h-[220px]">
-              <div>
-                <h4 className="font-space-grotesk font-black text-sm text-stone-900 border-b-2 border-black pb-2 mb-4 flex items-center gap-2">
-                  <Cpu className="w-4 h-4 text-cyan-600" />
-                  <span>Current Focus</span>
-                </h4>
-                
-                <ul className="space-y-3.5 font-space-grotesk font-extrabold text-stone-800 text-sm py-2">
-                  <li className="flex items-center gap-2.5">
-                    <span className="text-emerald-500 text-lg leading-none">&rarr;</span>
-                    <span>Distributed Systems</span>
-                  </li>
-                  <li className="flex items-center gap-2.5">
-                    <span className="text-emerald-500 text-lg leading-none">&rarr;</span>
-                    <span>Scalable Backend</span>
-                  </li>
-                  <li className="flex items-center gap-2.5">
-                    <span className="text-emerald-500 text-lg leading-none">&rarr;</span>
-                    <span>AI Agents</span>
-                  </li>
-                  <li className="flex items-center gap-2.5">
-                    <span className="text-emerald-500 text-lg leading-none">&rarr;</span>
-                    <span>Performance</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            {/* Column 3: Developer Terminal */}
-            <div className="border-2 border-black rounded-2xl overflow-hidden bg-stone-950 shadow-[4px_4px_0px_#000] text-left flex flex-col justify-between min-h-[300px]">
-              <div>
-                <div className="bg-stone-900 border-b border-black px-4 py-2 flex items-center justify-between">
-                  <span className="font-mono text-xs text-stone-400 font-bold">Developer Terminal</span>
-                  <div className="flex gap-1.5">
-                    <div className="w-2 h-2 rounded-full bg-red-500"></div>
-                    <div className="w-2 h-2 rounded-full bg-yellow-500"></div>
-                    <div className="w-2 h-2 rounded-full bg-green-500"></div>
-                  </div>
-                </div>
-
-                <div className="p-4 font-mono text-[11px] space-y-3.5 text-stone-300">
-                  <div>
-                    <div className="text-stone-500">$ whoami</div>
-                    <div className="text-stone-100 font-bold pl-2.5">Mohit</div>
-                  </div>
-                  
-                  <div>
-                    <div className="text-stone-500">$ pwd</div>
-                    <div className="text-stone-100 font-bold pl-2.5">~/building/reewise</div>
-                  </div>
-
-                  <div>
-                    <div className="text-stone-500">$ ls</div>
-                    <div className="text-cyan-400 font-bold pl-2.5 flex gap-2">
-                      <span>reewise/</span>
-                      <span>ai-agents/</span>
-                      <span>ideas/</span>
-                      <span>coffee/</span>
-                    </div>
-                  </div>
-
-                  <div>
-                    <div className="text-stone-500">$ git status</div>
-                    <div className="text-emerald-400 font-bold pl-2.5 leading-relaxed">
-                      On branch main<br />
-                      Everything committed ✓
-                    </div>
-                  </div>
-
-                  <div className="pt-2 border-t border-stone-850">
-                    <div className="text-stone-500">$ {TERMINAL_COMMANDS[terminalIdx].cmd}</div>
-                    <div className="text-stone-100 font-bold pl-2.5">
-                      {TERMINAL_COMMANDS[terminalIdx].out}
-                    </div>
-                  </div>
-
-                  <div className="flex items-center gap-1 pl-0.5 text-stone-500 text-[11px] font-bold">
-                    <span>$</span>
-                    <span className="w-1.5 h-3 bg-stone-400 animate-pulse"></span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Status bar */}
-              <div className="bg-stone-900 px-4 py-2 border-t border-black font-mono text-[10px] text-stone-400 flex items-center justify-between">
-                <span>status: active</span>
-                <span className="text-emerald-400 animate-pulse">● online</span>
-              </div>
-            </div>
-          </div>
-
-          {/* Bottom Human connecting banner */}
-          <div className="border-t-2 border-black pt-6 mt-10 flex flex-col sm:flex-row items-center justify-between gap-6 bg-yellow-50/50 p-4 sm:p-6 rounded-2xl border border-stone-200">
-            <div className="text-left space-y-1.5">
-              <h4 className="font-space-grotesk font-black text-xs text-stone-500 uppercase tracking-widest">
-                Current Status
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {/* Column 1: Building */}
+            <div className="border-2 border-black p-4 rounded-xl bg-orange-50/50 shadow-[2px_2px_0px_#000]">
+              <h4 className="font-space-grotesk font-black text-sm text-stone-900 border-b border-black pb-1.5 mb-3">
+                Currently Building
               </h4>
-              <p className="text-stone-900 font-extrabold text-base sm:text-lg font-space-grotesk">
-                Always building something interesting. Let's talk.
+              <ul className="space-y-2 text-xs font-bold text-stone-700">
+                <li className="flex items-start gap-1.5">
+                  <span className="text-orange-500">•</span> ReeWise local database syncing optimization
+                </li>
+                <li className="flex items-start gap-1.5">
+                  <span className="text-orange-500">•</span> Multi-agent orchestrators for SEO scraping
+                </li>
+                <li className="flex items-start gap-1.5">
+                  <span className="text-orange-500">•</span> System design preparation reviews
+                </li>
+                <li className="flex items-start gap-1.5">
+                  <span className="text-orange-500">•</span> React Native rendering metrics profiling
+                </li>
+              </ul>
+            </div>
+
+            {/* Column 2: Learning */}
+            <div className="border-2 border-black p-4 rounded-xl bg-cyan-50/50 shadow-[2px_2px_0px_#000]">
+              <h4 className="font-space-grotesk font-black text-sm text-stone-900 border-b border-black pb-1.5 mb-3">
+                Actively Learning
+              </h4>
+              <ul className="space-y-2 text-xs font-bold text-stone-700">
+                <li className="flex items-start gap-1.5">
+                  <span className="text-cyan-500">•</span> Distributed systems & eventual consistency patterns
+                </li>
+                <li className="flex items-start gap-1.5">
+                  <span className="text-cyan-500">•</span> CRDT data models (Yjs / Automerge)
+                </li>
+                <li className="flex items-start gap-1.5">
+                  <span className="text-cyan-500">•</span> Advanced memory footprint profiling in JS
+                </li>
+              </ul>
+            </div>
+
+            {/* Column 3: Reading */}
+            <div className="border-2 border-black p-4 rounded-xl bg-pink-50/50 shadow-[2px_2px_0px_#000]">
+              <h4 className="font-space-grotesk font-black text-sm text-stone-900 border-b border-black pb-1.5 mb-3">
+                Current Reading
+              </h4>
+              <ul className="space-y-2 text-xs font-bold text-stone-700">
+                <li className="flex items-start gap-1.5">
+                  <span className="text-pink-500">•</span> Designing Data-Intensive Applications (Martin Kleppmann)
+                </li>
+                <li className="flex items-start gap-1.5">
+                  <span className="text-pink-500">•</span> High-Performance Browser Networking (Ilya Grigorik)
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="border-t-2 border-black pt-6 mt-8 flex flex-col md:flex-row items-center gap-6 bg-yellow-50/50 p-4 rounded-xl border border-stone-200">
+            <div className="flex-1 space-y-2 text-left">
+              <div className="inline-block bg-pink-200 border border-black px-2.5 py-0.5 rounded font-space-grotesk font-black text-[10px] shadow-[1px_1px_0px_#000] rotate-[-1deg]">
+                Current Status
+              </div>
+              <h4 className="text-base font-space-grotesk font-black text-stone-900">
+                Probably waiting for your reply...
+              </h4>
+              <p className="text-stone-600 font-bold text-xs leading-relaxed max-w-xl">
+                ...or looking for a lead from your side. If you've scrolled this far, my inbox is open. Let's create something that didn't exist yesterday. Drop me a message below!
               </p>
             </div>
             
