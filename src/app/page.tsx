@@ -825,13 +825,13 @@ export default function Home() {
           <div className="border-t-2 border-black pt-6 mt-8 flex flex-col md:flex-row items-center gap-6 bg-yellow-50/50 p-4 rounded-xl border border-stone-200">
             <div className="flex-1 space-y-2 text-left">
               <div className="inline-block bg-pink-200 border border-black px-2.5 py-0.5 rounded font-space-grotesk font-black text-[10px] shadow-[1px_1px_0px_#000] rotate-[-1deg]">
-                Live Pipeline Status
+                Current Status
               </div>
               <h4 className="text-base font-space-grotesk font-black text-stone-900">
                 Probably waiting for your reply...
               </h4>
               <p className="text-stone-600 font-bold text-xs leading-relaxed max-w-xl">
-                Or perhaps looking for a lead from your side. If you've scrolled this far, my inbox is open and the latency is lower than a hot-reload cycle!
+                ...or looking for a great project to collaborate on. If you've scrolled this far down my sketchbook, my inbox is always open and I'd love to hear from you. Drop a message below and let's build something amazing together!
               </p>
             </div>
             
