@@ -757,12 +757,9 @@ export default function Home() {
 
           <div className="pt-4 mb-6">
             <h3 className="text-2xl font-space-grotesk font-extrabold text-stone-900 flex items-center gap-2">
-              Current Focus & Work Board
+              Work Board
               <Compass className="w-6 h-6 text-orange-600" />
             </h3>
-            <p className="text-stone-500 font-semibold text-xs mt-1">
-              Active goals, current reads, and software pipelines under development.
-            </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
