@@ -64,12 +64,12 @@ export default function ResumeViewer() {
                     Full-Stack Engineer | AI Agent Developer | Dual Degree @ IIT Kharagpur
                   </p>
                   <div className="flex flex-wrap justify-center gap-x-4 gap-y-1 text-xs font-sans text-stone-500 mt-2">
-                    <span className="flex items-center gap-1">
+                    <a href="mailto:m3hi13245@gmail.com" className="flex items-center gap-1 hover:underline">
                       <Mail className="w-3 h-3" /> m3hi13245@gmail.com
-                    </span>
-                    <span className="flex items-center gap-1">
+                    </a>
+                    <a href="tel:8168341986" className="flex items-center gap-1 hover:underline">
                       <Phone className="w-3 h-3" /> 8168341986
-                    </span>
+                    </a>
                     <span className="flex items-center gap-1">
                       <MapPin className="w-3 h-3" /> Kharagpur, WB
                     </span>
