@@ -220,7 +220,7 @@ export default function Home() {
               IIT
             </div>
 
-            <div className="w-28 h-28 border-3 border-black rounded-2xl relative mb-6 shadow-[3px_3px_0px_#000] overflow-hidden rotate-[-2deg]">
+            <div className="w-44 h-28 border-3 border-black rounded-2xl relative mb-6 shadow-[3px_3px_0px_#000] overflow-hidden rotate-[-2deg]">
               <img
                 src="/mohit.jpg"
                 alt="Mohit Pant"
