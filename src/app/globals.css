@@ -1,0 +1,125 @@
+@import "tailwindcss";
+
+@theme {
+  --font-outfit: var(--font-outfit), sans-serif;
+  --font-space-grotesk: var(--font-space-grotesk), sans-serif;
+}
+
+@layer base {
+  body {
+    background-color: #fafaf9;
+    color: #1c1917;
+    font-family: var(--font-outfit), sans-serif;
+  }
+}
+
+/* Custom Neo-Brutalist utility styles */
+.sketch-border {
+  border: 3px solid #000000;
+  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+}
+
+.doodle-card {
+  background: #ffffff;
+  border: 2px solid #000000;
+  border-radius: 12px;
+  box-shadow: 4px 4px 0px 0px #000000;
+  transition: all 0.2s ease-in-out;
+}
+
+.doodle-card:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px 0px #000000;
+}
+
+.doodle-card:active {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px 0px #000000;
+}
+
+.doodle-btn {
+  background: #ffffff;
+  border: 2px solid #000000;
+  border-radius: 8px;
+  box-shadow: 3px 3px 0px 0px #000000;
+  transition: all 0.15s ease-in-out;
+  cursor: pointer;
+}
+
+.doodle-btn:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 4px 4px 0px 0px #000000;
+}
+
+.doodle-btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0px 0px #000000;
+}
+
+/* Paper Grid Background */
+.paper-grid {
+  background-color: #fafaf9;
+  background-image: radial-gradient(#d1d5db 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* Hand-drawn Highlights */
+.highlight-yellow {
+  background: linear-gradient(120deg, rgba(254, 240, 138, 0.4) 0%, rgba(254, 240, 138, 0.7) 100%);
+  border-radius: 2px;
+}
+
+.highlight-pink {
+  background: linear-gradient(120deg, rgba(251, 207, 232, 0.4) 0%, rgba(251, 207, 232, 0.7) 100%);
+  border-radius: 2px;
+}
+
+.highlight-cyan {
+  background: linear-gradient(120deg, rgba(165, 243, 252, 0.4) 0%, rgba(165, 243, 252, 0.7) 100%);
+  border-radius: 2px;
+}
+
+/* Custom Doodled Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #fafaf9;
+  border-left: 2px solid #000000;
+}
+::-webkit-scrollbar-thumb {
+  background: #000000;
+  border: 2px solid #fafaf9;
+  border-radius: 10px;
+}
+
+/* Keyframes for Floating Doodles */
+@keyframes float-slow {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(3deg);
+  }
+}
+
+@keyframes float-reverse {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(6px) rotate(-4deg);
+  }
+}
+
+.animate-float-1 {
+  animation: float-slow 4s ease-in-out infinite;
+}
+
+.animate-float-2 {
+  animation: float-reverse 5s ease-in-out infinite;
+}
+
+.animate-float-3 {
+  animation: float-slow 6s ease-in-out infinite alternate;
+}
