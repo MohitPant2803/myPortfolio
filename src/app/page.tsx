@@ -160,16 +160,30 @@ export default function Home() {
               fill="none" 
               xmlns="http://www.w3.org/2000/svg"
             >
-              {/* Hand-drawn marker style MP Monogram */}
+              {/* Coder Monogram: < MP > */}
               <path 
-                d="M 25 75 C 26 50 25 35 27 25 C 38 45 44 52 50 62 C 56 50 63 42 73 25 C 72 40 73 55 72 75" 
+                d="M 20 35 L 8 50 L 20 65" 
                 stroke="currentColor" 
                 strokeWidth="10" 
                 strokeLinecap="round" 
                 strokeLinejoin="round" 
               />
               <path 
-                d="M 27 25 C 55 20 64 33 64 46 C 64 59 48 57 27 52" 
+                d="M 80 35 L 92 50 L 80 65" 
+                stroke="currentColor" 
+                strokeWidth="10" 
+                strokeLinecap="round" 
+                strokeLinejoin="round" 
+              />
+              <path 
+                d="M 32 65 V 35 L 49 51 L 66 35 V 65" 
+                stroke="currentColor" 
+                strokeWidth="10" 
+                strokeLinecap="round" 
+                strokeLinejoin="round" 
+              />
+              <path 
+                d="M 66 35 C 80 35 80 50 66 50" 
                 stroke="currentColor" 
                 strokeWidth="10" 
                 strokeLinecap="round" 
