@@ -544,42 +544,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
-            {[
-              {
-                title: "Lead Generator",
-                description: "Coordinates Business Locators, technical site performance auditing, scoring algorithms, and outreach email generators.",
-                highlights: ["Geoapify", "PageSpeed", "Gemini Pro"]
-              },
-              {
-                title: "Competitor Research",
-                description: "Coordinates browser scraping instances, compiles parsed markdown reader nodes, and streams results via SSE.",
-                highlights: ["Puppeteer", "Jina Reader", "Groq SSE"]
-              },
-              {
-                title: "Interview Simulator",
-                description: "Extracts resume keywords to prompt interview scripts, captures verbal answers via speech recognition, and rates outcomes.",
-                highlights: ["Resume Parser", "Web Speech API", "FastAPI"]
-              },
-              {
-                title: "Study Assistant",
-                description: "Accepts lecture audio files, compiles client-side chunk compression via FFmpeg WASM, and transcribes definitions.",
-                highlights: ["Whisper API", "FFmpeg WASM", "PDFKit Notes"]
-              }
-            ].map((agent, i) => (
-              <div key={i} className="border-2 border-black p-4 rounded-xl bg-stone-50 shadow-[3px_3px_0px_#000]">
-                <h4 className="font-space-grotesk font-extrabold text-stone-900 mb-1 text-sm">{agent.title}</h4>
-                <p className="text-stone-600 font-medium text-xs leading-relaxed mb-3">{agent.description}</p>
-                <div className="flex flex-wrap gap-1">
-                  {agent.highlights.map((tag) => (
-                    <span key={tag} className="text-[10px] font-bold bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded border border-emerald-300">
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
+
 
           <div className="border-2 border-black rounded-xl overflow-hidden bg-stone-50">
             <div className="p-3 bg-stone-200 border-b-2 border-black font-space-grotesk font-black text-xs uppercase tracking-wider text-stone-700">
