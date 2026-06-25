@@ -1,13 +1,11 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   Cpu,
   Layers,
   ExternalLink,
-  ChevronRight,
   Sparkles,
   BookOpen,
   Award,
@@ -115,7 +113,7 @@ export default function Home() {
   const blogArticles = [
     {
       title: "Building Offline First Mobile Apps",
-      description: "A deep dive into SQLite transactions, sync ledgers, and merging offline vector clock offsets.",
+      description: "Exploring SQLite transactions, sync ledgers, and merging offline vector clock offsets.",
       date: "June 2026",
       readTime: "6 min read",
       tags: ["SQLite", "React Native", "Zustand"]
@@ -528,34 +526,25 @@ export default function Home() {
                   </div>
 
                   {/* Actions */}
-                  <div className="flex flex-col gap-2 pt-4 border-t border-stone-100 font-space-grotesk">
-                    <Link
-                      href={`/projects/${project.id}`}
-                      className="doodle-btn text-center py-2 bg-yellow-100 text-stone-900 font-extrabold text-xs border-black hover:bg-yellow-200 flex items-center justify-center gap-1"
-                    >
-                      🔍 View Engineering Deep Dive <ChevronRight className="w-3.5 h-3.5 stroke-[3px]" />
-                    </Link>
-
-                    <div className="flex gap-2">
-                      {project.demo && (
-                        <a
-                          href={project.demo}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="doodle-btn flex-1 text-center py-2 bg-pink-100 text-stone-900 font-extrabold text-xs border-black flex items-center justify-center gap-1 hover:bg-pink-200"
-                        >
-                          🌐 Live Demo
-                        </a>
-                      )}
+                  <div className="flex gap-2 pt-4 border-t border-stone-100 font-space-grotesk">
+                    {project.demo && (
                       <a
-                        href={project.github}
+                        href={project.demo}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="doodle-btn flex-1 text-center py-2 bg-stone-50 text-stone-700 font-bold text-xs border-black flex items-center justify-center gap-1 hover:bg-stone-100"
+                        className="doodle-btn flex-1 text-center py-2 bg-pink-100 text-stone-900 font-extrabold text-xs border-black flex items-center justify-center gap-1 hover:bg-pink-200"
                       >
-                        🐙 Code Link
+                        🌐 Live Demo
                       </a>
-                    </div>
+                    )}
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="doodle-btn flex-1 text-center py-2 bg-stone-50 text-stone-700 font-bold text-xs border-black flex items-center justify-center gap-1 hover:bg-stone-100"
+                    >
+                      🐙 Code Link
+                    </a>
                   </div>
                 </div>
               </motion.div>
@@ -865,7 +854,7 @@ export default function Home() {
       <section id="blog" className="mb-20">
         <div className="text-center mb-10">
           <h2 className="text-3xl font-space-grotesk font-extrabold text-stone-900 relative inline-block">
-            Engineering Deep Dives & Notes
+            Engineering Notes
             <UnderlineDoodle className="text-yellow-400" />
           </h2>
           <p className="text-stone-500 font-semibold text-sm mt-2">
