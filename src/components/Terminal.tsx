@@ -42,6 +42,7 @@ export default function Terminal() {
             <p><span className="text-yellow-600 font-bold font-mono w-20 inline-block">skills</span> - Core tools currently working with</p>
             <p><span className="text-cyan-600 font-bold font-mono w-20 inline-block">projects</span> - Showcase of applications</p>
             <p><span className="text-emerald-600 font-bold font-mono w-20 inline-block">contact</span> - Direct communication coordinates</p>
+            <p><span className="text-amber-600 font-bold font-mono w-20 inline-block">cat</span> - Summon the secret helper 🐱</p>
             <p><span className="text-violet-600 font-bold font-mono w-20 inline-block">clear</span> - Flush terminal log</p>
           </div>
         );
@@ -82,6 +83,18 @@ export default function Terminal() {
             <p>📱 Phone: <span className="font-bold">8168341986</span></p>
             <p>🐙 GitHub: <a href="https://github.com/MohitPant2803" target="_blank" rel="noopener noreferrer" className="underline hover:text-pink-600">MohitPant2803</a></p>
             <p>🔗 LinkedIn: <a href="https://www.linkedin.com/in/mohit-pant-46790624b/" target="_blank" rel="noopener noreferrer" className="underline hover:text-pink-600">mohit-pant</a></p>
+          </div>
+        );
+        break;
+      case "cat":
+        response = (
+          <div className="flex flex-col items-center justify-center p-3 bg-stone-50 border-2 border-black rounded-xl max-w-sm mx-auto shadow-[3px_3px_0px_#000] rotate-1 mt-1">
+            <p className="text-center font-bold text-stone-700 text-[10px] sm:text-xs mb-1">🐱 Auditing codebase performance...</p>
+            <iframe 
+              src="https://embed.lottiefiles.com/animation/dWUie0iIVk" 
+              className="w-24 h-24 sm:w-28 sm:h-28 border-0 pointer-events-none bg-transparent"
+              title="Lottie Loader Cat"
+            ></iframe>
           </div>
         );
         break;
