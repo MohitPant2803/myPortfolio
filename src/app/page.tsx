@@ -1050,11 +1050,9 @@ export default function Home() {
                 animate={{ scale: 1, opacity: 1 }}
                 className="h-64 flex flex-col items-center justify-center text-center bg-green-50 border-2 border-black rounded-xl p-6"
               >
-                <iframe 
-                  src="https://embed.lottiefiles.com/animation/dWUie0iIVk" 
-                  className="w-24 h-24 border-0 pointer-events-none bg-transparent mb-2"
-                  title="Lottie Loader Cat"
-                ></iframe>
+                <div className="w-12 h-12 rounded-full bg-green-100 border-2 border-black flex items-center justify-center mb-3 shadow-[2px_2px_0px_#000]">
+                  <Check className="w-6 h-6 text-green-700 stroke-[3px]" />
+                </div>
                 <h4 className="font-space-grotesk font-extrabold text-stone-900 text-lg">Message Sent Successfully</h4>
                 <p className="text-stone-500 font-semibold text-xs mt-1 leading-relaxed">
                   Thank you for reaching out, Mohit will get back to you shortly.
