@@ -776,8 +776,7 @@ export default function Home() {
       </section>
 
       {/* NOW PAGE / BOARD SECTION */}
-      <section id="now" className="mb-20 scroll-mt-6">
-        <div className="border-3 border-black bg-white rounded-2xl p-6 sm:p-10 shadow-[6px_6px_0px_#000] relative">
+      <section id="now" className="mb-20 scroll-mt-6">        <div className="border-3 border-black bg-white rounded-2xl p-6 sm:p-10 shadow-[6px_6px_0px_#000] relative">
           {/* Header tag */}
           <div className="absolute -top-5 left-6 bg-orange-200 border-2 border-black px-4 py-1 rounded-md font-space-grotesk font-extrabold text-sm shadow-[2.5px_2.5px_0px_#000] rotate-[-1deg]">
             06. /now
@@ -790,7 +789,7 @@ export default function Home() {
                 <Compass className="w-6 h-6 text-orange-600" />
               </h3>
               <p className="text-stone-500 font-semibold text-xs mt-1">
-                A live peek into what I'm actively building, learning, and shipping.
+                Active goals, brain downloads, and software pipelines under development.
               </p>
             </div>
             
@@ -806,178 +805,157 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-            {/* Left Column: Build Queue & Brain Logs (col-span-7) */}
-            <div className="lg:col-span-7 space-y-6">
-              {/* Build Queue Console */}
-              <div className="border-2 border-black rounded-2xl overflow-hidden bg-stone-900 shadow-[4px_4px_0px_#000] text-left">
-                <div className="bg-stone-800 border-b-2 border-black px-4 py-2 flex items-center justify-between">
-                  <span className="font-mono text-xs text-stone-400 font-bold">build_queue.log</span>
-                  <div className="flex gap-1.5">
-                    <div className="w-2.5 h-2.5 rounded-full border border-black bg-stone-600"></div>
-                    <div className="w-2.5 h-2.5 rounded-full border border-black bg-stone-600"></div>
-                    <div className="w-2.5 h-2.5 rounded-full border border-black bg-stone-600"></div>
-                  </div>
-                </div>
-                <div className="p-5 font-mono text-xs space-y-4 text-left">
-                  <div className="space-y-1.5">
-                    <div className="flex justify-between text-emerald-400 font-extrabold">
-                      <span>[████████░░] 80%</span>
-                      <span>ReeWise</span>
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
+            {/* Column 1: Build Queue */}
+            <div className="border-2 border-black p-5 rounded-2xl bg-white shadow-[4px_4px_0px_#000] flex flex-col justify-between text-left">
+              <div>
+                <h4 className="font-space-grotesk font-black text-sm text-stone-900 border-b-2 border-black pb-2 mb-4 flex items-center gap-2">
+                  <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse border border-black"></span>
+                  <span>Build Queue</span>
+                </h4>
+                
+                <div className="font-mono text-xs space-y-4">
+                  <div className="space-y-1">
+                    <div className="flex justify-between text-emerald-600 font-extrabold">
+                      <span>[████████░░] ReeWise</span>
                     </div>
-                    <div className="text-stone-400 text-[11px] pl-4">
-                      &rarr; Optimizing local SQLite database sync pipelines & CRDT layers
+                    <div className="text-stone-500 text-[11px] pl-3 leading-relaxed">
+                      &rarr; Optimizing database sync pipelines & CRDT layers
                     </div>
                   </div>
 
-                  <div className="space-y-1.5">
-                    <div className="flex justify-between text-cyan-400 font-extrabold">
-                      <span>[███████░░░] 70%</span>
-                      <span>SEO Agents</span>
+                  <div className="space-y-1">
+                    <div className="flex justify-between text-cyan-600 font-extrabold">
+                      <span>[███████░░░] SEO Agents</span>
                     </div>
-                    <div className="text-stone-400 text-[11px] pl-4">
-                      &rarr; Multi-agent orchestrators for large-scale crawling & structured metrics parsing
-                    </div>
-                  </div>
-
-                  <div className="space-y-1.5">
-                    <div className="flex justify-between text-yellow-400 font-extrabold">
-                      <span>[█████░░░░░] 50%</span>
-                      <span>System Design</span>
-                    </div>
-                    <div className="text-stone-400 text-[11px] pl-4">
-                      &rarr; Daily review sessions focused on consensus systems & database shards
+                    <div className="text-stone-500 text-[11px] pl-3 leading-relaxed">
+                      &rarr; Multi-agent orchestrators for large-scale scraping
                     </div>
                   </div>
 
-                  <div className="space-y-1.5">
-                    <div className="flex justify-between text-pink-400 font-extrabold">
-                      <span>[█████████░] 90%</span>
-                      <span>React Native Tooling</span>
+                  <div className="space-y-1">
+                    <div className="flex justify-between text-amber-600 font-extrabold">
+                      <span>[█████░░░░░] System Design</span>
                     </div>
-                    <div className="text-stone-400 text-[11px] pl-4">
-                      &rarr; Rendering metrics extraction, profiling FPS drops & lazy allocations
+                    <div className="text-stone-500 text-[11px] pl-3 leading-relaxed">
+                      &rarr; Daily review of consensus systems & sharding
                     </div>
                   </div>
-                </div>
-              </div>
 
-              {/* Brain Downloads */}
-              <div className="border-2 border-black rounded-2xl overflow-hidden bg-stone-950 shadow-[4px_4px_0px_#000] text-left">
-                <div className="bg-stone-900 border-b-2 border-black px-4 py-2 flex items-center justify-between">
-                  <span className="font-mono text-xs text-stone-400 font-bold">brain_downloads.sh</span>
-                  <span className="text-[10px] font-bold text-stone-500 uppercase font-mono">Status: active</span>
-                </div>
-                <div className="p-5 font-mono text-xs text-stone-300 text-left space-y-2">
-                  <div className="text-stone-500 mb-1">$ cat learning_goals</div>
-                  <div className="text-emerald-400 font-bold flex items-center gap-1.5">
-                    <span>✓</span> Distributed systems & replica consensus
-                  </div>
-                  <div className="text-emerald-400 font-bold flex items-center gap-1.5">
-                    <span>✓</span> Eventual consistency models & transaction boundaries
-                  </div>
-                  <div className="text-emerald-400 font-bold flex items-center gap-1.5">
-                    <span>✓</span> CRDT data models (Yjs / Automerge) for client synchronization
-                  </div>
-                  <div className="text-emerald-400 font-bold flex items-center gap-1.5">
-                    <span>✓</span> Advanced JavaScript memory footprint profiling & leak detection
+                  <div className="space-y-1">
+                    <div className="flex justify-between text-pink-600 font-extrabold">
+                      <span>[█████████░] React Native</span>
+                    </div>
+                    <div className="text-stone-500 text-[11px] pl-3 leading-relaxed">
+                      &rarr; Rendering metrics & performance profiling
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* Right Column: Status & Obsessions (col-span-5) */}
-            <div className="lg:col-span-5 space-y-6">
-              {/* Status prompt */}
-              <div className="border-2 border-black p-5 rounded-2xl bg-white shadow-[4px_4px_0px_#000] text-left">
-                <h4 className="font-space-grotesk font-black text-sm text-stone-900 border-b border-stone-200 pb-2 mb-4 flex justify-between items-center">
-                  <span>Diagnostics Console</span>
-                  <span className="text-[10px] font-bold bg-stone-100 border border-stone-300 px-2 py-0.5 rounded text-stone-600 font-mono">
-                    sys.log
-                  </span>
+            {/* Column 2: Brain Cache & Desk */}
+            <div className="border-2 border-black p-5 rounded-2xl bg-white shadow-[4px_4px_0px_#000] flex flex-col justify-between text-left">
+              <div>
+                <h4 className="font-space-grotesk font-black text-sm text-stone-900 border-b-2 border-black pb-2 mb-4 flex items-center gap-2">
+                  <Cpu className="w-4 h-4 text-cyan-600" />
+                  <span>Brain Downloads</span>
                 </h4>
                 
-                {/* Diagnostics Progress Bars */}
-                <div className="space-y-3 font-mono text-[11px] font-bold text-stone-700 mb-6">
-                  <div className="space-y-1">
-                    <div className="flex justify-between">
-                      <span>CURIOSITY</span>
-                      <span className="text-emerald-600">100%</span>
-                    </div>
-                    <div className="w-full bg-stone-100 border border-stone-300 h-3.5 rounded overflow-hidden flex">
-                      <div className="bg-emerald-400 border-r border-black h-full w-full"></div>
-                    </div>
-                  </div>
-
-                  <div className="space-y-1">
-                    <div className="flex justify-between">
-                      <span>SLEEP</span>
-                      <span className="text-amber-600">32%</span>
-                    </div>
-                    <div className="w-full bg-stone-100 border border-stone-300 h-3.5 rounded overflow-hidden flex">
-                      <div className="bg-amber-400 border-r border-black h-full w-[32%]"></div>
-                    </div>
-                  </div>
-
-                  <div className="space-y-1 relative">
-                    <div className="flex justify-between">
-                      <span>BUGS DISCOVERED</span>
-                      <span className="text-pink-600">OVERFLOW</span>
-                    </div>
-                    <div className="w-full bg-stone-100 border border-stone-300 h-3.5 rounded flex relative">
-                      <div className="bg-pink-400 border-r border-black h-full w-full animate-pulse"></div>
-                      <span className="absolute inset-0 flex items-center justify-center text-[9px] text-pink-900 font-black">
-                        CRITICAL OVERFLOW
-                      </span>
-                    </div>
-                  </div>
+                <div className="space-y-3 mb-6">
+                  <p className="text-[10px] text-stone-400 font-bold uppercase tracking-wider">Actively Consuming</p>
+                  <ul className="space-y-2 text-xs font-bold text-stone-700">
+                    <li className="flex items-center gap-2 text-emerald-600">
+                      <span className="text-sm font-extrabold">&rarr;</span> Distributed systems & consensus
+                    </li>
+                    <li className="flex items-center gap-2 text-emerald-600">
+                      <span className="text-sm font-extrabold">&rarr;</span> Eventual consistency models
+                    </li>
+                    <li className="flex items-center gap-2 text-emerald-600">
+                      <span className="text-sm font-extrabold">&rarr;</span> CRDTs (Yjs / Automerge)
+                    </li>
+                    <li className="flex items-center gap-2 text-emerald-600">
+                      <span className="text-sm font-extrabold">&rarr;</span> JS memory leak profiling
+                    </li>
+                  </ul>
                 </div>
 
-                {/* Shell Prompts */}
-                <div className="space-y-3 pt-4 border-t border-stone-100 font-mono text-xs">
-                  <div>
-                    <div className="text-stone-400">$ whoami</div>
-                    <div className="text-stone-800 font-bold pl-3">building things.</div>
-                  </div>
-                  <div>
-                    <div className="text-stone-400">$ current_state</div>
-                    <div className="text-stone-800 font-bold pl-3">probably debugging.</div>
-                  </div>
-                  <div>
-                    <div className="text-stone-400">$ available_for</div>
-                    <div className="text-stone-800 font-bold pl-3">solving interesting problems.</div>
-                  </div>
+                <div className="border-t border-stone-200 pt-4">
+                  <p className="text-[10px] text-stone-400 font-bold uppercase tracking-wider mb-2">Books Open on Desk</p>
+                  <ul className="space-y-2.5 text-xs font-bold text-stone-700">
+                    <li className="flex items-start gap-2">
+                      <span className="text-stone-400">📖</span>
+                      <span>Designing Data-Intensive Applications</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-stone-400">📖</span>
+                      <span>High-Performance Browser Networking</span>
+                    </li>
+                  </ul>
                 </div>
               </div>
 
               {/* Weekly Obsession Chip */}
-              <div className="border-2 border-black p-4 rounded-2xl bg-yellow-50 shadow-[4px_4px_0px_#000] text-left flex items-start gap-3 relative">
-                <span className="text-2xl mt-0.5 select-none">🎯</span>
-                <div>
-                  <h5 className="font-space-grotesk font-black text-xs text-stone-900 uppercase tracking-wider">
-                    Weekly Obsession
-                  </h5>
-                  <p className="text-stone-700 font-bold text-sm font-space-grotesk mt-0.5">
-                    {obobsession}
-                  </p>
+              <div className="mt-4 pt-3 border-t border-stone-100 flex items-center gap-2 text-left">
+                <span className="text-[10px] font-bold bg-yellow-100 border border-black px-2 py-0.5 rounded shadow-[1px_1px_0px_#000] shrink-0 font-space-grotesk">
+                  Weekly Obsession
+                </span>
+                <span className="text-xs font-extrabold text-stone-700 truncate" title={obobsession}>
+                  {obobsession}
+                </span>
+              </div>
+            </div>
+
+            {/* Column 3: Terminal Diagnostics */}
+            <div className="border-2 border-black rounded-2xl overflow-hidden bg-stone-950 shadow-[4px_4px_0px_#000] text-left flex flex-col justify-between min-h-[320px]">
+              <div>
+                <div className="bg-stone-900 border-b border-black px-4 py-2 flex items-center justify-between">
+                  <span className="font-mono text-xs text-stone-400 font-bold">workspace.sh</span>
+                  <div className="flex gap-1.5">
+                    <div className="w-2 h-2 rounded-full bg-red-500"></div>
+                    <div className="w-2 h-2 rounded-full bg-yellow-500"></div>
+                    <div className="w-2 h-2 rounded-full bg-green-500"></div>
+                  </div>
+                </div>
+
+                <div className="p-4 font-mono text-[11px] space-y-3.5 text-stone-300">
+                  <div>
+                    <div className="text-stone-500">$ whoami</div>
+                    <div className="text-stone-100 font-bold pl-2.5">building things.</div>
+                  </div>
+                  <div>
+                    <div className="text-stone-500">$ current_state</div>
+                    <div className="text-stone-100 font-bold pl-2.5">probably debugging.</div>
+                  </div>
+                  <div>
+                    <div className="text-stone-500">$ available_for</div>
+                    <div className="text-stone-100 font-bold pl-2.5">solving interesting problems.</div>
+                  </div>
+
+                  <div className="pt-2.5 border-t border-stone-800 space-y-2">
+                    <div className="text-stone-500">$ diagnostics</div>
+                    <div className="space-y-1.5 pl-2.5 font-mono text-[10px]">
+                      <div className="flex justify-between">
+                        <span>Curiosity</span>
+                        <span className="text-emerald-400">██████████ 100%</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span>Sleep</span>
+                        <span className="text-amber-400">███░░░░░░░ 32%</span>
+                      </div>
+                      <div className="flex justify-between text-pink-400 relative">
+                        <span>Bugs</span>
+                        <span className="font-black animate-pulse">███████████████ [OVERFLOW]</span>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
 
-              {/* Books Shelf */}
-              <div className="border-2 border-black p-5 rounded-2xl bg-white shadow-[4px_4px_0px_#000] text-left">
-                <h4 className="font-space-grotesk font-black text-sm text-stone-900 border-b border-stone-200 pb-2 mb-3">
-                  Books Open on My Desk
-                </h4>
-                <ul className="space-y-2.5 text-xs font-bold text-stone-700">
-                  <li className="flex items-start gap-2">
-                    <span className="text-lg leading-none select-none">📖</span>
-                    <span>Designing Data-Intensive Applications <span className="text-[10px] text-stone-400 block font-normal">(Martin Kleppmann)</span></span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-lg leading-none select-none">📖</span>
-                    <span>High-Performance Browser Networking <span className="text-[10px] text-stone-400 block font-normal">(Ilya Grigorik)</span></span>
-                  </li>
-                </ul>
+              {/* Status bar */}
+              <div className="bg-stone-900 px-4 py-2 border-t border-black font-mono text-[10px] text-stone-400 flex items-center justify-between">
+                <span>status: active</span>
+                <span className="text-emerald-400 animate-pulse">● online</span>
               </div>
             </div>
           </div>
@@ -985,11 +963,14 @@ export default function Home() {
           {/* Bottom Human connecting banner */}
           <div className="border-t-2 border-black pt-6 mt-10 flex flex-col md:flex-row items-center gap-6 bg-yellow-50/50 p-4 sm:p-6 rounded-2xl border border-stone-200">
             <div className="flex-1 space-y-2 text-left">
+              <div className="inline-block bg-pink-200 border border-black px-2.5 py-0.5 rounded font-space-grotesk font-black text-[10px] shadow-[1px_1px_0px_#000] rotate-[-1deg] mb-1">
+                Current Status
+              </div>
               <h4 className="text-base font-space-grotesk font-black text-stone-900">
-                If you've made it this far, you probably like building things too.
+                Probably waiting for your reply...
               </h4>
-              <p className="text-stone-600 font-bold text-xs leading-relaxed max-w-2xl">
-                My inbox is always open. Let's create something that didn't exist yesterday. Drop me a message in the section below!
+              <p className="text-stone-600 font-bold text-xs leading-relaxed max-w-xl">
+                ...or looking for a lead from your side. If you've scrolled this far, my inbox is open. Let's create something that didn't exist yesterday. Drop me a message below!
               </p>
             </div>
             
