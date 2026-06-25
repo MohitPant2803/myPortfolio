@@ -194,11 +194,11 @@ export default function Home() {
             </span>
           </h1>
 
-          <h2 className="text-xl sm:text-2xl font-space-grotesk font-extrabold text-stone-900 leading-tight mb-2">
-            Software Engineer
+          <h2 className="text-xl sm:text-2xl font-space-grotesk font-bold text-stone-700 leading-relaxed mb-6">
+            Full Stack Engineer building AI-powered applications, mobile apps, and automation systems.
           </h2>
-          <p className="text-stone-600 font-semibold leading-relaxed mb-8 max-w-xl text-base font-space-grotesk">
-            Building AI tools, scalable web applications, and systems that solve real-world problems.
+          <p className="text-stone-600 font-medium leading-relaxed mb-8 max-w-xl text-base">
+            I build production-ready mobile and web applications, AI-powered automation systems, and offline-first software. I focus on developing scalable, high-performance software for startups, businesses, and ambitious ideas.
           </p>
 
           {/* Resume Viewer and CTAs */}
