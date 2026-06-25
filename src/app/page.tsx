@@ -153,8 +153,29 @@ export default function Home() {
       {/* HEADER NAVBAR */}
       <header className="flex justify-between items-center py-4 px-6 mb-12 border-2 border-black bg-white rounded-xl shadow-[4px_4px_0px_#000] relative">
         <div className="flex items-center gap-2">
-          <div className="w-10 h-10 bg-yellow-300 border-2 border-black rounded-lg flex items-center justify-center font-bold text-lg rotate-3 shadow-[2px_2px_0px_#000]">
-            MP
+          <div className="w-10 h-10 bg-yellow-300 border-2 border-black rounded-lg flex items-center justify-center rotate-3 shadow-[2px_2px_0px_#000] overflow-hidden p-1">
+            <svg 
+              viewBox="0 0 100 100" 
+              className="w-full h-full text-stone-900"
+              fill="none" 
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              {/* Hand-drawn marker style MP Monogram */}
+              <path 
+                d="M 25 75 C 26 50 25 35 27 25 C 38 45 44 52 50 62 C 56 50 63 42 73 25 C 72 40 73 55 72 75" 
+                stroke="currentColor" 
+                strokeWidth="10" 
+                strokeLinecap="round" 
+                strokeLinejoin="round" 
+              />
+              <path 
+                d="M 27 25 C 55 20 64 33 64 46 C 64 59 48 57 27 52" 
+                stroke="currentColor" 
+                strokeWidth="10" 
+                strokeLinecap="round" 
+                strokeLinejoin="round" 
+              />
+            </svg>
           </div>
           <div>
             <h1 className="font-space-grotesk font-bold text-lg leading-tight">Mohit Pant</h1>
