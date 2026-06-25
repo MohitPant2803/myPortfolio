@@ -166,6 +166,7 @@ export default function Home() {
           <a href="#terminal" className="hover:text-amber-500 transition-colors">Terminal</a>
           <a href="#services" className="hover:text-emerald-600 transition-colors">Services</a>
           <a href="#projects" className="hover:text-cyan-500 transition-colors">Projects</a>
+          <a href="#ai-agents" className="hover:text-emerald-500 transition-colors">AI Systems</a>
           <a href="#consistency" className="hover:text-violet-500 transition-colors">Consistency</a>
           <a href="#now" className="hover:text-orange-500 transition-colors">Now</a>
         </nav>
@@ -526,11 +527,58 @@ export default function Home() {
         </div>
       </section>
 
+      {/* AI AGENTS / AI SYSTEMS BUILT */}
+      <section id="ai-agents" className="mb-20 scroll-mt-6">
+        <div className="border-3 border-black bg-white rounded-2xl p-6 sm:p-10 shadow-[6px_6px_0px_#000] relative">
+          <div className="absolute -top-5 left-6 bg-emerald-200 border-2 border-black px-4 py-1 rounded-md font-space-grotesk font-extrabold text-sm shadow-[2.5px_2.5px_0px_#000] rotate-1">
+            04. AI Systems Built
+          </div>
+
+          <div className="pt-4 mb-6">
+            <h3 className="text-2xl font-space-grotesk font-extrabold text-stone-900 mb-2 flex items-center gap-2">
+              Autonomous Systems & LLM Workflows
+              <Cpu className="w-6 h-6 text-emerald-600" />
+            </h3>
+            <p className="text-stone-500 font-semibold text-sm max-w-xl">
+              Factual strategies implemented to manage API fallbacks, state control, and latency patterns.
+            </p>
+          </div>
+
+
+
+          <div className="border-2 border-black rounded-xl overflow-hidden bg-stone-50">
+            <div className="p-3 bg-stone-200 border-b-2 border-black font-space-grotesk font-black text-xs uppercase tracking-wider text-stone-700">
+              Agent Engineering Strategies & Mechanics
+            </div>
+            <div className="divide-y-2 divide-black text-xs font-semibold text-stone-700">
+              <div className="grid grid-cols-1 sm:grid-cols-4 p-3 gap-2">
+                <div className="font-bold text-stone-900 sm:col-span-1">LLMs & Prompting</div>
+                <div className="sm:col-span-3 text-stone-600 leading-relaxed">
+                  Enforces structured outputs using strict JSON Schema protocols on Gemini and Groq, with fallback regex validation checks.
+                </div>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-4 p-3 gap-2">
+                <div className="font-bold text-stone-900 sm:col-span-1">Fallback Architectures</div>
+                <div className="sm:col-span-3 text-stone-600 leading-relaxed">
+                  Primary tasks flow to Groq; automatic fallback queues reroute to Gemini Pro in case of rate-limiting triggers.
+                </div>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-4 p-3 gap-2">
+                <div className="font-bold text-stone-900 sm:col-span-1">Streaming & Caching</div>
+                <div className="sm:col-span-3 text-stone-600 leading-relaxed">
+                  Server-Sent Events (SSE) stream text to reduce perceived latency. Responses are cached locally in SQLite based on payload hash identifiers.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* LEETCODE & CODING CONSISTENCY */}
       <section id="consistency" className="mb-20 scroll-mt-6">
         <div className="border-3 border-black bg-white rounded-2xl p-6 sm:p-8 shadow-[6px_6px_0px_#000] relative">
           <div className="absolute -top-5 left-6 bg-violet-200 border-2 border-black px-4 py-1 rounded-md font-space-grotesk font-extrabold text-sm shadow-[2.5px_2.5px_0px_#000] rotate-1">
-            04. Coding Consistency Dashboard
+            05. Coding Consistency Dashboard
           </div>
 
           <div className="pt-4 mb-6">
@@ -669,7 +717,7 @@ export default function Home() {
         <div className="border-3 border-black bg-white rounded-2xl p-6 sm:p-10 shadow-[6px_6px_0px_#000] relative">
           {/* Header tag */}
           <div className="absolute -top-5 left-6 bg-orange-200 border-2 border-black px-4 py-1 rounded-md font-space-grotesk font-extrabold text-sm shadow-[2.5px_2.5px_0px_#000] rotate-[-1deg]">
-            05. /now
+            06. /now
           </div>
 
           <div className="pt-4 mb-6">
@@ -785,7 +833,7 @@ export default function Home() {
       <section id="leadership" className="mb-20">
         <div className="border-3 border-black bg-white rounded-2xl p-6 sm:p-10 shadow-[6px_6px_0px_#000] relative">
           <div className="absolute -top-5 left-6 bg-orange-200 border-2 border-black px-4 py-1 rounded-md font-space-grotesk font-extrabold text-sm shadow-[2.5px_2.5px_0px_#000] rotate-[-1deg]">
-            06. Leadership
+            07. Leadership
           </div>
           <div className="pt-4 mb-6">
             <h3 className="text-2xl font-space-grotesk font-black text-stone-900 flex items-center gap-2">
@@ -848,7 +896,7 @@ export default function Home() {
           {/* Left Column */}
           <div className="lg:col-span-5 border-3 border-black bg-white rounded-2xl p-6 sm:p-8 shadow-[6px_6px_0px_#000] relative flex flex-col justify-between">
             <div className="absolute -top-5 left-6 bg-pink-200 border-2 border-black px-4 py-1 rounded-md font-space-grotesk font-extrabold text-sm shadow-[2.5px_2.5px_0px_#000] rotate-1">
-              07. Get In Touch
+              08. Get In Touch
             </div>
             <div className="pt-4">
               <h3 className="text-2xl font-space-grotesk font-extrabold text-stone-900 mb-2">
