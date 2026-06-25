@@ -43,14 +43,40 @@ import ResumeViewer from "@/components/ResumeViewer";
 import { projectsData } from "@/data/projects";
 import { Github, Linkedin } from "@/components/BrandIcons";
 
+const STATUS_MESSAGES = [
+  "Compiling ideas...",
+  "Investigating a race condition.",
+  "Making JavaScript behave.",
+  "Probably reading Martin Kleppmann again.",
+  "Turning caffeine into software.",
+  "One tab away from a breakthrough.",
+  "Running on curiosity.",
+  "git push origin main --force"
+];
+
+const OBSESSIONS = [
+  "CRDT Sync Engines",
+  "Eventual Consistency",
+  "Shopify FlashList rendering",
+  "LLM Schema Enforcements",
+  "SSE vs WebSockets",
+  "Local SQLite sync structures"
+];
+
 export default function Home() {
   const [mounted, setMounted] = useState(false);
   const [copiedText, setCopiedText] = useState("");
   const [contactForm, setContactForm] = useState({ name: "", email: "", message: "" });
   const [formSubmitted, setFormSubmitted] = useState(false);
+  const [currentStatus, setCurrentStatus] = useState("Running on curiosity.");
+  const [obobsession, setObobsession] = useState("CRDT Sync Engines");
 
   useEffect(() => {
     setMounted(true);
+    const status = STATUS_MESSAGES[Math.floor(Math.random() * STATUS_MESSAGES.length)];
+    setCurrentStatus(status);
+    const obs = OBSESSIONS[Math.floor(Math.random() * OBSESSIONS.length)];
+    setObobsession(obs);
   }, []);
 
   const handleCopy = (text: string, label: string) => {
@@ -752,90 +778,222 @@ export default function Home() {
       {/* NOW PAGE / BOARD SECTION */}
       <section id="now" className="mb-20 scroll-mt-6">
         <div className="border-3 border-black bg-white rounded-2xl p-6 sm:p-10 shadow-[6px_6px_0px_#000] relative">
+          {/* Header tag */}
           <div className="absolute -top-5 left-6 bg-orange-200 border-2 border-black px-4 py-1 rounded-md font-space-grotesk font-extrabold text-sm shadow-[2.5px_2.5px_0px_#000] rotate-[-1deg]">
-            06. What I'm Doing "Now"
+            06. /now
           </div>
 
-          <div className="pt-4 mb-6">
-            <h3 className="text-2xl font-space-grotesk font-extrabold text-stone-900 flex items-center gap-2">
-              Current Focus & Work Board
-              <Compass className="w-6 h-6 text-orange-600" />
-            </h3>
-            <p className="text-stone-500 font-semibold text-xs mt-1">
-              Active goals, current reads, and software pipelines under development.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {/* Column 1: Building */}
-            <div className="border-2 border-black p-4 rounded-xl bg-orange-50/50 shadow-[2px_2px_0px_#000]">
-              <h4 className="font-space-grotesk font-black text-sm text-stone-900 border-b border-black pb-1.5 mb-3">
-                Currently Building
-              </h4>
-              <ul className="space-y-2 text-xs font-bold text-stone-700">
-                <li className="flex items-start gap-1.5">
-                  <span className="text-orange-500">•</span> ReeWise local database syncing optimization
-                </li>
-                <li className="flex items-start gap-1.5">
-                  <span className="text-orange-500">•</span> Multi-agent orchestrators for SEO scraping
-                </li>
-                <li className="flex items-start gap-1.5">
-                  <span className="text-orange-500">•</span> System design preparation reviews
-                </li>
-                <li className="flex items-start gap-1.5">
-                  <span className="text-orange-500">•</span> React Native rendering metrics profiling
-                </li>
-              </ul>
-            </div>
-
-            {/* Column 2: Learning */}
-            <div className="border-2 border-black p-4 rounded-xl bg-cyan-50/50 shadow-[2px_2px_0px_#000]">
-              <h4 className="font-space-grotesk font-black text-sm text-stone-900 border-b border-black pb-1.5 mb-3">
-                Actively Learning
-              </h4>
-              <ul className="space-y-2 text-xs font-bold text-stone-700">
-                <li className="flex items-start gap-1.5">
-                  <span className="text-cyan-500">•</span> Distributed systems & eventual consistency patterns
-                </li>
-                <li className="flex items-start gap-1.5">
-                  <span className="text-cyan-500">•</span> CRDT data models (Yjs / Automerge)
-                </li>
-                <li className="flex items-start gap-1.5">
-                  <span className="text-cyan-500">•</span> Advanced memory footprint profiling in JS
-                </li>
-              </ul>
-            </div>
-
-            {/* Column 3: Reading */}
-            <div className="border-2 border-black p-4 rounded-xl bg-pink-50/50 shadow-[2px_2px_0px_#000]">
-              <h4 className="font-space-grotesk font-black text-sm text-stone-900 border-b border-black pb-1.5 mb-3">
-                Current Reading
-              </h4>
-              <ul className="space-y-2 text-xs font-bold text-stone-700">
-                <li className="flex items-start gap-1.5">
-                  <span className="text-pink-500">•</span> Designing Data-Intensive Applications (Martin Kleppmann)
-                </li>
-                <li className="flex items-start gap-1.5">
-                  <span className="text-pink-500">•</span> High-Performance Browser Networking (Ilya Grigorik)
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="border-t-2 border-black pt-6 mt-8 flex flex-col md:flex-row items-center gap-6 bg-yellow-50/50 p-4 rounded-xl border border-stone-200">
-            <div className="flex-1 space-y-2 text-left">
-              <div className="inline-block bg-pink-200 border border-black px-2.5 py-0.5 rounded font-space-grotesk font-black text-[10px] shadow-[1px_1px_0px_#000] rotate-[-1deg]">
-                Current Status
-              </div>
-              <h4 className="text-base font-space-grotesk font-black text-stone-900">
-                Probably waiting for your reply...
-              </h4>
-              <p className="text-stone-600 font-bold text-xs leading-relaxed max-w-xl">
-                ...or looking for a great project to collaborate on. If you've scrolled this far down my sketchbook, my inbox is always open and I'd love to hear from you. Drop a message below and let's build something amazing together!
+          <div className="pt-4 mb-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div>
+              <h3 className="text-2xl font-space-grotesk font-extrabold text-stone-900 flex items-center gap-2">
+                Developer Workspace & Status
+                <Compass className="w-6 h-6 text-orange-600" />
+              </h3>
+              <p className="text-stone-500 font-semibold text-xs mt-1">
+                A live peek into what I'm actively building, learning, and shipping.
               </p>
             </div>
             
-            <div className="shrink-0 flex items-center justify-center p-3 border-2 border-black bg-white rounded-xl shadow-[2px_2px_0px_#000] rotate-[2deg]">
+            {/* Flashing status indicator */}
+            <div className="flex items-center gap-2 self-start sm:self-center border-2 border-black px-3 py-1 bg-stone-50 rounded-xl shadow-[2px_2px_0px_#000]">
+              <span className="relative flex h-2.5 w-2.5">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+              </span>
+              <span className="font-mono text-[10px] font-bold text-stone-600 uppercase tracking-wider">
+                {currentStatus}
+              </span>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+            {/* Left Column: Build Queue & Brain Logs (col-span-7) */}
+            <div className="lg:col-span-7 space-y-6">
+              {/* Build Queue Console */}
+              <div className="border-2 border-black rounded-2xl overflow-hidden bg-stone-900 shadow-[4px_4px_0px_#000] text-left">
+                <div className="bg-stone-800 border-b-2 border-black px-4 py-2 flex items-center justify-between">
+                  <span className="font-mono text-xs text-stone-400 font-bold">build_queue.log</span>
+                  <div className="flex gap-1.5">
+                    <div className="w-2.5 h-2.5 rounded-full border border-black bg-stone-600"></div>
+                    <div className="w-2.5 h-2.5 rounded-full border border-black bg-stone-600"></div>
+                    <div className="w-2.5 h-2.5 rounded-full border border-black bg-stone-600"></div>
+                  </div>
+                </div>
+                <div className="p-5 font-mono text-xs space-y-4 text-left">
+                  <div className="space-y-1.5">
+                    <div className="flex justify-between text-emerald-400 font-extrabold">
+                      <span>[████████░░] 80%</span>
+                      <span>ReeWise</span>
+                    </div>
+                    <div className="text-stone-400 text-[11px] pl-4">
+                      &rarr; Optimizing local SQLite database sync pipelines & CRDT layers
+                    </div>
+                  </div>
+
+                  <div className="space-y-1.5">
+                    <div className="flex justify-between text-cyan-400 font-extrabold">
+                      <span>[███████░░░] 70%</span>
+                      <span>SEO Agents</span>
+                    </div>
+                    <div className="text-stone-400 text-[11px] pl-4">
+                      &rarr; Multi-agent orchestrators for large-scale crawling & structured metrics parsing
+                    </div>
+                  </div>
+
+                  <div className="space-y-1.5">
+                    <div className="flex justify-between text-yellow-400 font-extrabold">
+                      <span>[█████░░░░░] 50%</span>
+                      <span>System Design</span>
+                    </div>
+                    <div className="text-stone-400 text-[11px] pl-4">
+                      &rarr; Daily review sessions focused on consensus systems & database shards
+                    </div>
+                  </div>
+
+                  <div className="space-y-1.5">
+                    <div className="flex justify-between text-pink-400 font-extrabold">
+                      <span>[█████████░] 90%</span>
+                      <span>React Native Tooling</span>
+                    </div>
+                    <div className="text-stone-400 text-[11px] pl-4">
+                      &rarr; Rendering metrics extraction, profiling FPS drops & lazy allocations
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Brain Downloads */}
+              <div className="border-2 border-black rounded-2xl overflow-hidden bg-stone-950 shadow-[4px_4px_0px_#000] text-left">
+                <div className="bg-stone-900 border-b-2 border-black px-4 py-2 flex items-center justify-between">
+                  <span className="font-mono text-xs text-stone-400 font-bold">brain_downloads.sh</span>
+                  <span className="text-[10px] font-bold text-stone-500 uppercase font-mono">Status: active</span>
+                </div>
+                <div className="p-5 font-mono text-xs text-stone-300 text-left space-y-2">
+                  <div className="text-stone-500 mb-1">$ cat learning_goals</div>
+                  <div className="text-emerald-400 font-bold flex items-center gap-1.5">
+                    <span>✓</span> Distributed systems & replica consensus
+                  </div>
+                  <div className="text-emerald-400 font-bold flex items-center gap-1.5">
+                    <span>✓</span> Eventual consistency models & transaction boundaries
+                  </div>
+                  <div className="text-emerald-400 font-bold flex items-center gap-1.5">
+                    <span>✓</span> CRDT data models (Yjs / Automerge) for client synchronization
+                  </div>
+                  <div className="text-emerald-400 font-bold flex items-center gap-1.5">
+                    <span>✓</span> Advanced JavaScript memory footprint profiling & leak detection
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Right Column: Status & Obsessions (col-span-5) */}
+            <div className="lg:col-span-5 space-y-6">
+              {/* Status prompt */}
+              <div className="border-2 border-black p-5 rounded-2xl bg-white shadow-[4px_4px_0px_#000] text-left">
+                <h4 className="font-space-grotesk font-black text-sm text-stone-900 border-b border-stone-200 pb-2 mb-4 flex justify-between items-center">
+                  <span>Diagnostics Console</span>
+                  <span className="text-[10px] font-bold bg-stone-100 border border-stone-300 px-2 py-0.5 rounded text-stone-600 font-mono">
+                    sys.log
+                  </span>
+                </h4>
+                
+                {/* Diagnostics Progress Bars */}
+                <div className="space-y-3 font-mono text-[11px] font-bold text-stone-700 mb-6">
+                  <div className="space-y-1">
+                    <div className="flex justify-between">
+                      <span>CURIOSITY</span>
+                      <span className="text-emerald-600">100%</span>
+                    </div>
+                    <div className="w-full bg-stone-100 border border-stone-300 h-3.5 rounded overflow-hidden flex">
+                      <div className="bg-emerald-400 border-r border-black h-full w-full"></div>
+                    </div>
+                  </div>
+
+                  <div className="space-y-1">
+                    <div className="flex justify-between">
+                      <span>SLEEP</span>
+                      <span className="text-amber-600">32%</span>
+                    </div>
+                    <div className="w-full bg-stone-100 border border-stone-300 h-3.5 rounded overflow-hidden flex">
+                      <div className="bg-amber-400 border-r border-black h-full w-[32%]"></div>
+                    </div>
+                  </div>
+
+                  <div className="space-y-1 relative">
+                    <div className="flex justify-between">
+                      <span>BUGS DISCOVERED</span>
+                      <span className="text-pink-600">OVERFLOW</span>
+                    </div>
+                    <div className="w-full bg-stone-100 border border-stone-300 h-3.5 rounded flex relative">
+                      <div className="bg-pink-400 border-r border-black h-full w-full animate-pulse"></div>
+                      <span className="absolute inset-0 flex items-center justify-center text-[9px] text-pink-900 font-black">
+                        CRITICAL OVERFLOW
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Shell Prompts */}
+                <div className="space-y-3 pt-4 border-t border-stone-100 font-mono text-xs">
+                  <div>
+                    <div className="text-stone-400">$ whoami</div>
+                    <div className="text-stone-800 font-bold pl-3">building things.</div>
+                  </div>
+                  <div>
+                    <div className="text-stone-400">$ current_state</div>
+                    <div className="text-stone-800 font-bold pl-3">probably debugging.</div>
+                  </div>
+                  <div>
+                    <div className="text-stone-400">$ available_for</div>
+                    <div className="text-stone-800 font-bold pl-3">solving interesting problems.</div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Weekly Obsession Chip */}
+              <div className="border-2 border-black p-4 rounded-2xl bg-yellow-50 shadow-[4px_4px_0px_#000] text-left flex items-start gap-3 relative">
+                <span className="text-2xl mt-0.5 select-none">🎯</span>
+                <div>
+                  <h5 className="font-space-grotesk font-black text-xs text-stone-900 uppercase tracking-wider">
+                    Weekly Obsession
+                  </h5>
+                  <p className="text-stone-700 font-bold text-sm font-space-grotesk mt-0.5">
+                    {obobsession}
+                  </p>
+                </div>
+              </div>
+
+              {/* Books Shelf */}
+              <div className="border-2 border-black p-5 rounded-2xl bg-white shadow-[4px_4px_0px_#000] text-left">
+                <h4 className="font-space-grotesk font-black text-sm text-stone-900 border-b border-stone-200 pb-2 mb-3">
+                  Books Open on My Desk
+                </h4>
+                <ul className="space-y-2.5 text-xs font-bold text-stone-700">
+                  <li className="flex items-start gap-2">
+                    <span className="text-lg leading-none select-none">📖</span>
+                    <span>Designing Data-Intensive Applications <span className="text-[10px] text-stone-400 block font-normal">(Martin Kleppmann)</span></span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-lg leading-none select-none">📖</span>
+                    <span>High-Performance Browser Networking <span className="text-[10px] text-stone-400 block font-normal">(Ilya Grigorik)</span></span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          {/* Bottom Human connecting banner */}
+          <div className="border-t-2 border-black pt-6 mt-10 flex flex-col md:flex-row items-center gap-6 bg-yellow-50/50 p-4 sm:p-6 rounded-2xl border border-stone-200">
+            <div className="flex-1 space-y-2 text-left">
+              <h4 className="text-base font-space-grotesk font-black text-stone-900">
+                If you've made it this far, you probably like building things too.
+              </h4>
+              <p className="text-stone-600 font-bold text-xs leading-relaxed max-w-2xl">
+                My inbox is always open. Let's create something that didn't exist yesterday. Drop me a message in the section below!
+              </p>
+            </div>
+            
+            <div className="shrink-0 flex items-center justify-center p-3 border-2 border-black bg-white rounded-xl shadow-[2.5px_2.5px_0px_#000] rotate-[2deg]">
               {/* Cute Sketchbook Coffee Cup SVG */}
               <svg width="60" height="60" viewBox="0 0 100 100" fill="none" className="transform hover:scale-110 transition-transform cursor-pointer">
                 {/* Steam */}
@@ -860,7 +1018,7 @@ export default function Home() {
                 {/* Cute Face: Smile */}
                 <path d="M47,56 Q50,60 53,56" stroke="black" strokeWidth="3" strokeLinecap="round" fill="none" />
                 
-                {/* Coffee shadow / desk line */}
+                {/* Desk line */}
                 <path d="M15,85 L85,85" stroke="black" strokeWidth="4" strokeLinecap="round" />
               </svg>
             </div>
