@@ -15,7 +15,7 @@ export default function Terminal() {
       command: "welcome",
       output: (
         <div className="text-stone-500 font-semibold space-y-1">
-          <p>Welcome to Mohit's sketchbook terminal! 🎨</p>
+          <p>Welcome to Mohit's sketchbook terminal!</p>
           <p>Type <span className="text-pink-600 font-extrabold font-mono">help</span> to see a list of commands.</p>
         </div>
       )
@@ -67,21 +67,21 @@ export default function Terminal() {
       case "projects":
         response = (
           <div className="space-y-1 text-xs">
-            <p><span className="font-bold text-stone-800">📚 ReeWise</span> - Spaced repetition SQLite flashcard app (Play Store)</p>
-            <p><span className="font-bold text-stone-800">🔍 CompetitorScan</span> - Parallel browser scraper streamed via SSE</p>
-            <p><span className="font-bold text-stone-800">💼 Lead Gen Agent</span> - Local business SEO auditor & auto outreach</p>
-            <p><span className="font-bold text-stone-800">🎧 Cozy Study</span> - Speech to structured note PDF assistant</p>
-            <p><span className="font-bold text-stone-800">💡 Interview Platform</span> - Voice-driven mock interview screen engine</p>
+            <p><span className="font-bold text-stone-800">[App] ReeWise</span> - Spaced repetition SQLite flashcard app (Play Store)</p>
+            <p><span className="font-bold text-stone-800">[Web] CompetitorScan</span> - Parallel browser scraper streamed via SSE</p>
+            <p><span className="font-bold text-stone-800">[Agent] Lead Gen Agent</span> - Local business SEO auditor & auto outreach</p>
+            <p><span className="font-bold text-stone-800">[Web] Cozy Study</span> - Speech to structured note PDF assistant</p>
+            <p><span className="font-bold text-stone-800">[AI] Interview Platform</span> - Voice-driven mock interview screen engine</p>
           </div>
         );
         break;
       case "contact":
         response = (
           <div className="space-y-1 text-xs">
-            <p>📧 Email: <span className="font-bold">m3hi13245@gmail.com</span></p>
-            <p>📱 Phone: <span className="font-bold">8168341986</span></p>
-            <p>🐙 GitHub: <a href="https://github.com/MohitPant2803" target="_blank" rel="noopener noreferrer" className="underline hover:text-pink-600">MohitPant2803</a></p>
-            <p>🔗 LinkedIn: <a href="https://www.linkedin.com/in/mohit-pant-46790624b/" target="_blank" rel="noopener noreferrer" className="underline hover:text-pink-600">mohit-pant</a></p>
+            <p>Email: <span className="font-bold">m3hi13245@gmail.com</span></p>
+            <p>Phone: <span className="font-bold">8168341986</span></p>
+            <p>GitHub: <a href="https://github.com/MohitPant2803" target="_blank" rel="noopener noreferrer" className="underline hover:text-pink-600">MohitPant2803</a></p>
+            <p>LinkedIn: <a href="https://www.linkedin.com/in/mohit-pant-46790624b/" target="_blank" rel="noopener noreferrer" className="underline hover:text-pink-600">mohit-pant</a></p>
           </div>
         );
         break;

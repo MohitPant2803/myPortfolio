@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { Download, FileText, X, Printer } from "lucide-react";
+import { Download, FileText, X, Printer, Mail, Phone, MapPin } from "lucide-react";
 import { Github, Linkedin } from "./BrandIcons";
 
 export default function ResumeViewer() {
@@ -64,9 +64,15 @@ export default function ResumeViewer() {
                     Full-Stack Engineer | AI Agent Developer | Dual Degree @ IIT Kharagpur
                   </p>
                   <div className="flex flex-wrap justify-center gap-x-4 gap-y-1 text-xs font-sans text-stone-500 mt-2">
-                    <span>📧 m3hi13245@gmail.com</span>
-                    <span>📱 8168341986</span>
-                    <span>📍 Kharagpur, WB</span>
+                    <span className="flex items-center gap-1">
+                      <Mail className="w-3 h-3" /> m3hi13245@gmail.com
+                    </span>
+                    <span className="flex items-center gap-1">
+                      <Phone className="w-3 h-3" /> 8168341986
+                    </span>
+                    <span className="flex items-center gap-1">
+                      <MapPin className="w-3 h-3" /> Kharagpur, WB
+                    </span>
                   </div>
                   <div className="flex justify-center gap-4 text-xs font-sans text-stone-600 mt-2">
                     <a href="https://github.com/MohitPant2803" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 hover:underline">

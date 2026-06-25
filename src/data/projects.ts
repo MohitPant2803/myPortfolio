@@ -24,8 +24,8 @@ export const projectsData: Project[] = [
   {
     id: "reewise",
     name: "ReeWise",
-    tagline: "Offline-first spaced repetition flashcard platform built for scale.",
-    description: "Built an offline-first learning platform that enables students to study and revise anywhere, maintaining instant, reliable data synchronization across multiple devices without connection lag.",
+    tagline: "Offline-first spaced repetition flashcard mobile app built for scale.",
+    description: "Built an offline-first mobile app that enables students to study and revise anywhere, maintaining instant, reliable data synchronization across multiple devices without connection lag.",
     fullDescription: "ReeWise is a high-performance offline-first spaced repetition platform that empowers students to study seamlessly without internet connectivity. Built on top of Expo (React Native) and SQLite, it uses a custom synchronization engine that merges local state changes with a remote MongoDB cluster via a Node/Express API when connectivity is restored.",
     problem: "Studying on the go often suffers from unreliable internet connections, causing data loss or slow app loads. Spaced repetition apps need instant offline usability, absolute data persistence, and robust eventual consistency.",
     techStack: ["React Native", "Zustand", "SQLite", "Expo", "Node.js", "Express", "MongoDB", "Google OAuth"],
@@ -147,7 +147,7 @@ export const projectsData: Project[] = [
     demo: "https://competitor-scan-agent-frontend.vercel.app/",
     color: "bg-[#a5f3fc]",
     accentColor: "#06b6d4",
-    emoji: "🔍"
+    emoji: "Search"
   },
   {
     id: "lead-gen-agent",
@@ -199,7 +199,7 @@ export const projectsData: Project[] = [
     demo: "https://leadgenerator-backend-pzyw.onrender.com",
     color: "bg-[#fed7aa]",
     accentColor: "#f97316",
-    emoji: "💼"
+    emoji: "Briefcase"
   },
   {
     id: "cozy-study",
@@ -251,7 +251,7 @@ export const projectsData: Project[] = [
     demo: "https://notes-assistant-frontend.vercel.app/",
     color: "bg-[#fef08a]",
     accentColor: "#eab308",
-    emoji: "🎧"
+    emoji: "Headphones"
   },
   {
     id: "interview-platform",
@@ -303,6 +303,6 @@ export const projectsData: Project[] = [
     demo: "https://ai-interview-prep-frontend-smoky.vercel.app/",
     color: "bg-[#ddd6fe]",
     accentColor: "#8b5cf6",
-    emoji: "💡"
+    emoji: "Lightbulb"
   }
 ];

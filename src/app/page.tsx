@@ -20,7 +20,13 @@ import {
   Mail,
   Phone,
   Check,
-  Star
+  Star,
+  Search,
+  Briefcase,
+  Headphones,
+  Lightbulb,
+  Globe,
+  MapPin
 } from "lucide-react";
 import {
   HandDrawnStar,
@@ -109,44 +115,7 @@ export default function Home() {
   // List all showcase projects
   const filteredProjects = projectsData;
 
-  // Blog articles mock database
-  const blogArticles = [
-    {
-      title: "Building Offline First Mobile Apps",
-      description: "Exploring SQLite transactions, sync ledgers, and merging offline vector clock offsets.",
-      date: "June 2026",
-      readTime: "6 min read",
-      tags: ["SQLite", "React Native", "Zustand"]
-    },
-    {
-      title: "How I Built SQLite Sync",
-      description: "Designing dynamic synchronization pipelines from local device cache stores to remote MongoDB databases.",
-      date: "May 2026",
-      readTime: "8 min read",
-      tags: ["Database", "Sync Engine", "API"]
-    },
-    {
-      title: "Prompt Engineering Lessons",
-      description: "Tactics to enforce strict JSON schemas and structured outputs on Groq and Gemini models.",
-      date: "April 2026",
-      readTime: "5 min read",
-      tags: ["AI", "Gemini", "Llama-3"]
-    },
-    {
-      title: "Using SSE for AI Agents",
-      description: "Why Server-Sent Events beat WebSockets for real-time text-generation and status streaming pipelines.",
-      date: "March 2026",
-      readTime: "4 min read",
-      tags: ["SSE", "Next.js", "Streaming"]
-    },
-    {
-      title: "Optimizing React Native Performance",
-      description: "Leveraging FlashList recycled cell patterns and lazy asset hydration to reach solid 60FPS scrolls.",
-      date: "Feb 2026",
-      readTime: "7 min read",
-      tags: ["Performance", "FlashList", "Expo"]
-    }
-  ];
+
 
   // LeetCode Solved breakdown mock
   const leetcodeActivity = {
@@ -415,7 +384,7 @@ export default function Home() {
               },
               {
                 title: "Mobile App Development",
-                desc: "Crafting polished cross-platform iOS & Android mobile applications using React Native and Expo.",
+                desc: "Crafting polished Android mobile applications using React Native and Expo.",
                 color: "bg-pink-200"
               },
               {
@@ -480,7 +449,12 @@ export default function Home() {
                     {project.emoji.startsWith("/") ? (
                       <img src={project.emoji} alt={project.name} className="w-7 h-7 object-contain" />
                     ) : (
-                      <span className="text-2xl">{project.emoji}</span>
+                      <span className="p-1 border border-black rounded bg-white flex items-center justify-center shrink-0">
+                        {project.emoji === "Search" && <Search className="w-4 h-4 text-black stroke-[2.5px]" />}
+                        {project.emoji === "Briefcase" && <Briefcase className="w-4 h-4 text-black stroke-[2.5px]" />}
+                        {project.emoji === "Headphones" && <Headphones className="w-4 h-4 text-black stroke-[2.5px]" />}
+                        {project.emoji === "Lightbulb" && <Lightbulb className="w-4 h-4 text-black stroke-[2.5px]" />}
+                      </span>
                     )}
                     <h3 className="font-space-grotesk font-black text-xl text-stone-900">{project.name}</h3>
                   </div>
@@ -532,18 +506,18 @@ export default function Home() {
                         href={project.demo}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="doodle-btn flex-1 text-center py-2 bg-pink-100 text-stone-900 font-extrabold text-xs border-black flex items-center justify-center gap-1 hover:bg-pink-200"
+                        className="doodle-btn flex-1 text-center py-2 bg-pink-100 text-stone-900 font-extrabold text-xs border-black flex items-center justify-center gap-1.5 hover:bg-pink-200"
                       >
-                        🌐 Live Demo
+                        <Globe className="w-3.5 h-3.5" /> Live Demo
                       </a>
                     )}
                     <a
                       href={project.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="doodle-btn flex-1 text-center py-2 bg-stone-50 text-stone-700 font-bold text-xs border-black flex items-center justify-center gap-1 hover:bg-stone-100"
+                      className="doodle-btn flex-1 text-center py-2 bg-stone-50 text-stone-700 font-bold text-xs border-black flex items-center justify-center gap-1.5 hover:bg-stone-100"
                     >
-                      🐙 Code Link
+                      <Github className="w-3.5 h-3.5 shrink-0" /> Code Link
                     </a>
                   </div>
                 </div>
@@ -850,45 +824,50 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ENGINEERING NOTES (BLOG) */}
-      <section id="blog" className="mb-20">
-        <div className="text-center mb-10">
-          <h2 className="text-3xl font-space-grotesk font-extrabold text-stone-900 relative inline-block">
-            Engineering Notes
-            <UnderlineDoodle className="text-yellow-400" />
-          </h2>
-          <p className="text-stone-500 font-semibold text-sm mt-2">
-            Technical summaries and lessons learned while developing system architectures.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {blogArticles.map((article, idx) => (
-            <div
-              key={idx}
-              className="border-2 border-black p-5 rounded-2xl bg-white shadow-[4px_4px_0px_#000] hover:translate-y-[-2px] transition-all flex flex-col justify-between"
-            >
-              <div>
-                <div className="flex justify-between items-center text-[10px] font-bold text-stone-400 mb-2">
-                  <span>{article.date}</span>
-                  <span>{article.readTime}</span>
-                </div>
-                <h4 className="font-space-grotesk font-black text-stone-900 text-base mb-2 hover:text-pink-600 transition-colors">
-                  {article.title}
-                </h4>
-                <p className="text-stone-600 text-xs font-medium leading-relaxed mb-4">
-                  {article.description}
-                </p>
-              </div>
-              <div className="flex flex-wrap gap-1 border-t border-stone-100 pt-3">
-                {article.tags.map((tag) => (
-                  <span key={tag} className="text-[9px] font-bold bg-stone-100 border border-stone-300 px-1.5 py-0.5 rounded text-stone-600">
-                    {tag}
-                  </span>
-                ))}
-              </div>
+      {/* PIPELINE STATUS SECTION */}
+      <section className="mb-20 scroll-mt-6">
+        <div className="border-3 border-black bg-yellow-50 rounded-2xl p-6 sm:p-8 shadow-[6px_6px_0px_#000] flex flex-col md:flex-row items-center gap-6 relative overflow-hidden">
+          <div className="flex-1 space-y-3">
+            <div className="inline-block bg-pink-200 border-2 border-black px-3 py-0.5 rounded font-space-grotesk font-black text-xs shadow-[1.5px_1.5px_0px_#000] rotate-[-1deg]">
+              Live Pipeline Status
             </div>
-          ))}
+            <h3 className="text-xl font-space-grotesk font-black text-stone-900">
+              Probably waiting for your reply...
+            </h3>
+            <p className="text-stone-600 font-bold text-xs leading-relaxed max-w-lg">
+              Or perhaps looking for a lead from your side. If you've scrolled this far, my inbox is open and the latency is lower than a hot-reload cycle!
+            </p>
+          </div>
+          
+          <div className="shrink-0 flex items-center justify-center p-4 border-2 border-black bg-white rounded-2xl shadow-[3px_3px_0px_#000] rotate-[2deg]">
+            {/* Cute Sketchbook Coffee Cup SVG */}
+            <svg width="80" height="80" viewBox="0 0 100 100" fill="none" className="transform hover:scale-110 transition-transform cursor-pointer">
+              {/* Steam */}
+              <path d="M35,20 Q38,10 35,5" stroke="black" strokeWidth="3" strokeLinecap="round" />
+              <path d="M45,22 Q48,12 45,7" stroke="black" strokeWidth="3" strokeLinecap="round" />
+              <path d="M55,20 Q58,10 55,5" stroke="black" strokeWidth="3" strokeLinecap="round" />
+              
+              {/* Cup Body */}
+              <path d="M25,30 L75,30 C75,30 75,75 50,75 C25,75 25,30 25,30 Z" fill="#ffb7c5" stroke="black" strokeWidth="4" strokeLinejoin="round" />
+              
+              {/* Cup Handle */}
+              <path d="M75,40 C85,40 85,55 75,55" fill="none" stroke="black" strokeWidth="4" strokeLinecap="round" />
+              
+              {/* Cute Face: Eyes */}
+              <circle cx="42" cy="48" r="3" fill="black" />
+              <circle cx="58" cy="48" r="3" fill="black" />
+              
+              {/* Cute Face: Rosy cheeks */}
+              <circle cx="36" cy="54" r="3" fill="#ff8da1" opacity="0.8" />
+              <circle cx="64" cy="54" r="3" fill="#ff8da1" opacity="0.8" />
+              
+              {/* Cute Face: Smile */}
+              <path d="M47,56 Q50,60 53,56" stroke="black" strokeWidth="3" strokeLinecap="round" fill="none" />
+              
+              {/* Coffee shadow / desk line */}
+              <path d="M15,85 L85,85" stroke="black" strokeWidth="4" strokeLinecap="round" />
+            </svg>
+          </div>
         </div>
       </section>
 
