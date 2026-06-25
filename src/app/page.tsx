@@ -160,30 +160,30 @@ export default function Home() {
               fill="none" 
               xmlns="http://www.w3.org/2000/svg"
             >
-              {/* Coder Monogram: < MP > */}
+              {/* Coder Monogram: < M P > (No overlap) */}
               <path 
-                d="M 20 35 L 8 50 L 20 65" 
+                d="M 18 35 L 6 50 L 18 65" 
                 stroke="currentColor" 
                 strokeWidth="10" 
                 strokeLinecap="round" 
                 strokeLinejoin="round" 
               />
               <path 
-                d="M 80 35 L 92 50 L 80 65" 
+                d="M 26 65 V 35 L 40 50 L 54 35 V 65" 
                 stroke="currentColor" 
                 strokeWidth="10" 
                 strokeLinecap="round" 
                 strokeLinejoin="round" 
               />
               <path 
-                d="M 32 65 V 35 L 49 51 L 66 35 V 65" 
+                d="M 62 65 V 35 C 76 35 76 50 62 50" 
                 stroke="currentColor" 
                 strokeWidth="10" 
                 strokeLinecap="round" 
                 strokeLinejoin="round" 
               />
               <path 
-                d="M 66 35 C 80 35 80 50 66 50" 
+                d="M 82 35 L 94 50 L 82 65" 
                 stroke="currentColor" 
                 strokeWidth="10" 
                 strokeLinecap="round" 
