@@ -821,52 +821,49 @@ export default function Home() {
               </ul>
             </div>
           </div>
-        </div>
-      </section>
 
-      {/* PIPELINE STATUS SECTION */}
-      <section className="mb-20 scroll-mt-6">
-        <div className="border-3 border-black bg-yellow-50 rounded-2xl p-6 sm:p-8 shadow-[6px_6px_0px_#000] flex flex-col md:flex-row items-center gap-6 relative overflow-hidden">
-          <div className="flex-1 space-y-3">
-            <div className="inline-block bg-pink-200 border-2 border-black px-3 py-0.5 rounded font-space-grotesk font-black text-xs shadow-[1.5px_1.5px_0px_#000] rotate-[-1deg]">
-              Live Pipeline Status
+          <div className="border-t-2 border-black pt-6 mt-8 flex flex-col md:flex-row items-center gap-6 bg-yellow-50/50 p-4 rounded-xl border border-stone-200">
+            <div className="flex-1 space-y-2 text-left">
+              <div className="inline-block bg-pink-200 border border-black px-2.5 py-0.5 rounded font-space-grotesk font-black text-[10px] shadow-[1px_1px_0px_#000] rotate-[-1deg]">
+                Live Pipeline Status
+              </div>
+              <h4 className="text-base font-space-grotesk font-black text-stone-900">
+                Probably waiting for your reply...
+              </h4>
+              <p className="text-stone-600 font-bold text-xs leading-relaxed max-w-xl">
+                Or perhaps looking for a lead from your side. If you've scrolled this far, my inbox is open and the latency is lower than a hot-reload cycle!
+              </p>
             </div>
-            <h3 className="text-xl font-space-grotesk font-black text-stone-900">
-              Probably waiting for your reply...
-            </h3>
-            <p className="text-stone-600 font-bold text-xs leading-relaxed max-w-lg">
-              Or perhaps looking for a lead from your side. If you've scrolled this far, my inbox is open and the latency is lower than a hot-reload cycle!
-            </p>
-          </div>
-          
-          <div className="shrink-0 flex items-center justify-center p-4 border-2 border-black bg-white rounded-2xl shadow-[3px_3px_0px_#000] rotate-[2deg]">
-            {/* Cute Sketchbook Coffee Cup SVG */}
-            <svg width="80" height="80" viewBox="0 0 100 100" fill="none" className="transform hover:scale-110 transition-transform cursor-pointer">
-              {/* Steam */}
-              <path d="M35,20 Q38,10 35,5" stroke="black" strokeWidth="3" strokeLinecap="round" />
-              <path d="M45,22 Q48,12 45,7" stroke="black" strokeWidth="3" strokeLinecap="round" />
-              <path d="M55,20 Q58,10 55,5" stroke="black" strokeWidth="3" strokeLinecap="round" />
-              
-              {/* Cup Body */}
-              <path d="M25,30 L75,30 C75,30 75,75 50,75 C25,75 25,30 25,30 Z" fill="#ffb7c5" stroke="black" strokeWidth="4" strokeLinejoin="round" />
-              
-              {/* Cup Handle */}
-              <path d="M75,40 C85,40 85,55 75,55" fill="none" stroke="black" strokeWidth="4" strokeLinecap="round" />
-              
-              {/* Cute Face: Eyes */}
-              <circle cx="42" cy="48" r="3" fill="black" />
-              <circle cx="58" cy="48" r="3" fill="black" />
-              
-              {/* Cute Face: Rosy cheeks */}
-              <circle cx="36" cy="54" r="3" fill="#ff8da1" opacity="0.8" />
-              <circle cx="64" cy="54" r="3" fill="#ff8da1" opacity="0.8" />
-              
-              {/* Cute Face: Smile */}
-              <path d="M47,56 Q50,60 53,56" stroke="black" strokeWidth="3" strokeLinecap="round" fill="none" />
-              
-              {/* Coffee shadow / desk line */}
-              <path d="M15,85 L85,85" stroke="black" strokeWidth="4" strokeLinecap="round" />
-            </svg>
+            
+            <div className="shrink-0 flex items-center justify-center p-3 border-2 border-black bg-white rounded-xl shadow-[2px_2px_0px_#000] rotate-[2deg]">
+              {/* Cute Sketchbook Coffee Cup SVG */}
+              <svg width="60" height="60" viewBox="0 0 100 100" fill="none" className="transform hover:scale-110 transition-transform cursor-pointer">
+                {/* Steam */}
+                <path d="M35,20 Q38,10 35,5" stroke="black" strokeWidth="3" strokeLinecap="round" />
+                <path d="M45,22 Q48,12 45,7" stroke="black" strokeWidth="3" strokeLinecap="round" />
+                <path d="M55,20 Q58,10 55,5" stroke="black" strokeWidth="3" strokeLinecap="round" />
+                
+                {/* Cup Body */}
+                <path d="M25,30 L75,30 C75,30 75,75 50,75 C25,75 25,30 25,30 Z" fill="#ffb7c5" stroke="black" strokeWidth="4" strokeLinejoin="round" />
+                
+                {/* Cup Handle */}
+                <path d="M75,40 C85,40 85,55 75,55" fill="none" stroke="black" strokeWidth="4" strokeLinecap="round" />
+                
+                {/* Cute Face: Eyes */}
+                <circle cx="42" cy="48" r="3" fill="black" />
+                <circle cx="58" cy="48" r="3" fill="black" />
+                
+                {/* Cute Face: Rosy cheeks */}
+                <circle cx="36" cy="54" r="3" fill="#ff8da1" opacity="0.8" />
+                <circle cx="64" cy="54" r="3" fill="#ff8da1" opacity="0.8" />
+                
+                {/* Cute Face: Smile */}
+                <path d="M47,56 Q50,60 53,56" stroke="black" strokeWidth="3" strokeLinecap="round" fill="none" />
+                
+                {/* Coffee shadow / desk line */}
+                <path d="M15,85 L85,85" stroke="black" strokeWidth="4" strokeLinecap="round" />
+              </svg>
+            </div>
           </div>
         </div>
       </section>
