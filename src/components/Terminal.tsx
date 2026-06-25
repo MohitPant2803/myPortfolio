@@ -79,7 +79,7 @@ export default function Terminal() {
         response = (
           <div className="space-y-1 text-xs">
             <p>WhatsApp: <a href="https://wa.me/918168341986" target="_blank" rel="noopener noreferrer" className="underline hover:text-pink-600 font-bold">8168341986</a></p>
-            <p>Email: <a href="mailto:m3hi13245@gmail.com" className="underline hover:text-pink-600 font-bold">m3hi13245@gmail.com</a></p>
+            <p>Email: <a href="https://mail.google.com/mail/?view=cm&fs=1&to=m3hi13245@gmail.com" target="_blank" rel="noopener noreferrer" className="underline hover:text-pink-600 font-bold">m3hi13245@gmail.com</a></p>
             <p>Phone: <a href="tel:8168341986" className="underline hover:text-pink-600 font-bold">8168341986</a></p>
             <p>GitHub: <a href="https://github.com/MohitPant2803" target="_blank" rel="noopener noreferrer" className="underline hover:text-pink-600">MohitPant2803</a></p>
             <p>LinkedIn: <a href="https://www.linkedin.com/in/mohit-pant-46790624b/" target="_blank" rel="noopener noreferrer" className="underline hover:text-pink-600">mohit-pant</a></p>

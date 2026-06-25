@@ -64,7 +64,12 @@ export default function ResumeViewer() {
                     Full-Stack Engineer | AI Agent Developer | Dual Degree @ IIT Kharagpur
                   </p>
                   <div className="flex flex-wrap justify-center gap-x-4 gap-y-1 text-xs font-sans text-stone-500 mt-2">
-                    <a href="mailto:m3hi13245@gmail.com" className="flex items-center gap-1 hover:underline">
+                    <a 
+                      href="https://mail.google.com/mail/?view=cm&fs=1&to=m3hi13245@gmail.com" 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="flex items-center gap-1 hover:underline"
+                    >
                       <Mail className="w-3 h-3" /> m3hi13245@gmail.com
                     </a>
                     <a href="tel:8168341986" className="flex items-center gap-1 hover:underline">
