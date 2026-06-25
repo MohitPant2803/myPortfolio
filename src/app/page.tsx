@@ -44,23 +44,19 @@ import { projectsData } from "@/data/projects";
 import { Github, Linkedin } from "@/components/BrandIcons";
 
 const STATUS_MESSAGES = [
-  "Compiling ideas...",
-  "Investigating a race condition.",
-  "Making JavaScript behave.",
-  "Probably reading Martin Kleppmann again.",
-  "Turning caffeine into software.",
-  "One tab away from a breakthrough.",
-  "Running on curiosity.",
-  "git push origin main --force"
+  "BUILDING REEWISE",
+  "TRAINING AI AGENTS",
+  "DEBUGGING LIFE",
+  "SHIPPING FEATURES",
+  "CURRENTLY CODING"
 ];
 
-const OBSESSIONS = [
-  "CRDT Sync Engines",
-  "Eventual Consistency",
-  "Shopify FlashList rendering",
-  "LLM Schema Enforcements",
-  "SSE vs WebSockets",
-  "Local SQLite sync structures"
+const TERMINAL_COMMANDS = [
+  { cmd: "now_playing", out: "Building ReeWise" },
+  { cmd: "currently_learning", out: "Distributed Systems" },
+  { cmd: "debugging", out: "Race conditions" },
+  { cmd: "next_goal", out: "Ship v1" },
+  { cmd: "coffee", out: "Required" }
 ];
 
 export default function Home() {
@@ -68,15 +64,26 @@ export default function Home() {
   const [copiedText, setCopiedText] = useState("");
   const [contactForm, setContactForm] = useState({ name: "", email: "", message: "" });
   const [formSubmitted, setFormSubmitted] = useState(false);
-  const [currentStatus, setCurrentStatus] = useState("Running on curiosity.");
-  const [obobsession, setObobsession] = useState("CRDT Sync Engines");
+  const [statusIdx, setStatusIdx] = useState(0);
+  const [terminalIdx, setTerminalIdx] = useState(0);
 
   useEffect(() => {
     setMounted(true);
-    const status = STATUS_MESSAGES[Math.floor(Math.random() * STATUS_MESSAGES.length)];
-    setCurrentStatus(status);
-    const obs = OBSESSIONS[Math.floor(Math.random() * OBSESSIONS.length)];
-    setObobsession(obs);
+
+    // Rotate top status messages
+    const statusInterval = setInterval(() => {
+      setStatusIdx((prev) => (prev + 1) % STATUS_MESSAGES.length);
+    }, 4500);
+
+    // Rotate terminal commands
+    const terminalInterval = setInterval(() => {
+      setTerminalIdx((prev) => (prev + 1) % TERMINAL_COMMANDS.length);
+    }, 4000);
+
+    return () => {
+      clearInterval(statusInterval);
+      clearInterval(terminalInterval);
+    };
   }, []);
 
   const handleCopy = (text: string, label: string) => {
@@ -774,9 +781,10 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       {/* NOW PAGE / BOARD SECTION */}
-      <section id="now" className="mb-20 scroll-mt-6">        <div className="border-3 border-black bg-white rounded-2xl p-6 sm:p-10 shadow-[6px_6px_0px_#000] relative">          {/* Header tag */}
+      <section id="now" className="mb-20 scroll-mt-6">
+        <div className="border-3 border-black bg-white rounded-2xl p-6 sm:p-10 shadow-[6px_6px_0px_#000] relative">
+          {/* Header tag */}
           <div className="absolute -top-5 left-6 bg-orange-200 border-2 border-black px-4 py-1 rounded-md font-space-grotesk font-extrabold text-sm shadow-[2.5px_2.5px_0px_#000] rotate-[-1deg]">
             06. /now
           </div>
@@ -799,7 +807,7 @@ export default function Home() {
                 <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
               </span>
               <span className="font-mono text-[10px] font-bold text-stone-600 uppercase tracking-wider">
-                {currentStatus}
+                {STATUS_MESSAGES[statusIdx]}
               </span>
             </div>
           </div>
@@ -813,140 +821,75 @@ export default function Home() {
                   <span>What I'm Building</span>
                 </h4>
                 
-                <div className="font-mono text-xs space-y-4">
+                <div className="font-mono text-xs space-y-5">
+                  {/* ReeWise */}
                   <div className="space-y-1">
                     <div className="flex justify-between items-center">
-                      <span className="font-extrabold text-stone-900">[████████░░] ReeWise</span>
+                      <span className="font-extrabold text-stone-900">ReeWise</span>
                       <span className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-[9px] font-bold border border-black bg-emerald-50 text-emerald-800 uppercase tracking-wider">
                         <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
                         Building
                       </span>
                     </div>
-                    <div className="text-stone-500 text-[11px] pl-3 leading-relaxed">
-                      &rarr; Building a collaborative note-taking app that syncs instantly across devices.
+                    <div className="text-[11px] text-stone-500 font-semibold font-space-grotesk leading-none">
+                      Collaborative AI workspace
+                    </div>
+                    <div className="text-emerald-600 font-extrabold pt-1">
+                      ████████░░ 80%
                     </div>
                   </div>
 
+                  {/* AI Agents */}
                   <div className="space-y-1">
                     <div className="flex justify-between items-center">
-                      <span className="font-extrabold text-stone-900">[███████░░░] SEO Agents</span>
+                      <span className="font-extrabold text-stone-900">AI Agents</span>
                       <span className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-[9px] font-bold border border-black bg-blue-50 text-blue-800 uppercase tracking-wider">
-                        <span className="w-1.5 h-1.5 rounded-full bg-blue-500"></span>
-                        Improving
+                        <span className="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse"></span>
+                        In Progress
                       </span>
                     </div>
-                    <div className="text-stone-500 text-[11px] pl-3 leading-relaxed">
-                      &rarr; Developing AI agents that automate large-scale SEO research.
+                    <div className="text-[11px] text-stone-500 font-semibold font-space-grotesk leading-none">
+                      Autonomous workflows
                     </div>
-                  </div>
-
-                  <div className="space-y-1">
-                    <div className="flex justify-between items-center">
-                      <span className="font-extrabold text-stone-900">[█████░░░░░] System Design</span>
-                      <span className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-[9px] font-bold border border-black bg-yellow-50 text-yellow-800 uppercase tracking-wider">
-                        <span className="w-1.5 h-1.5 rounded-full bg-yellow-500"></span>
-                        Learning
-                      </span>
-                    </div>
-                    <div className="text-stone-500 text-[11px] pl-3 leading-relaxed">
-                      &rarr; Reviewing architecture patterns for high-traffic systems.
-                    </div>
-                  </div>
-
-                  <div className="space-y-1">
-                    <div className="flex justify-between items-center">
-                      <span className="font-extrabold text-stone-900">[█████████░] React Native</span>
-                      <span className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-[9px] font-bold border border-black bg-blue-50 text-blue-800 uppercase tracking-wider">
-                        <span className="w-1.5 h-1.5 rounded-full bg-blue-500"></span>
-                        Improving
-                      </span>
-                    </div>
-                    <div className="text-stone-500 text-[11px] pl-3 leading-relaxed">
-                      &rarr; Improving mobile app speed and user experience.
+                    <div className="text-blue-600 font-extrabold pt-1">
+                      ██████░░░░ 60%
                     </div>
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* Column 2: Currently Learning */}
-            <div className="border-2 border-black p-5 rounded-2xl bg-white shadow-[4px_4px_0px_#000] flex flex-col justify-between text-left">
+            {/* Column 2: Current Focus */}
+            <div className="border-2 border-black p-5 rounded-2xl bg-white shadow-[4px_4px_0px_#000] flex flex-col justify-center text-left min-h-[220px]">
               <div>
                 <h4 className="font-space-grotesk font-black text-sm text-stone-900 border-b-2 border-black pb-2 mb-4 flex items-center gap-2">
                   <Cpu className="w-4 h-4 text-cyan-600" />
-                  <span>Currently Learning</span>
+                  <span>Current Focus</span>
                 </h4>
                 
-                <div className="space-y-3.5 mb-6 text-left">
-                  <div className="space-y-0.5">
-                    <div className="flex items-center gap-2 text-stone-900 font-extrabold text-xs">
-                      <span className="text-emerald-500 font-extrabold">&rarr;</span>
-                      <span>Distributed Systems</span>
-                    </div>
-                    <div className="text-stone-500 text-[11px] pl-4 leading-relaxed font-semibold font-space-grotesk">
-                      Learning how large-scale systems like Google and Netflix work.
-                    </div>
-                  </div>
-
-                  <div className="space-y-0.5">
-                    <div className="flex items-center gap-2 text-stone-900 font-extrabold text-xs">
-                      <span className="text-emerald-500 font-extrabold">&rarr;</span>
-                      <span>Real-Time Collaboration</span>
-                    </div>
-                    <div className="text-stone-500 text-[11px] pl-4 leading-relaxed font-semibold font-space-grotesk">
-                      Studying algorithms (CRDTs) that let multiple users edit documents simultaneously.
-                    </div>
-                  </div>
-
-                  <div className="space-y-0.5">
-                    <div className="flex items-center gap-2 text-stone-900 font-extrabold text-xs">
-                      <span className="text-emerald-500 font-extrabold">&rarr;</span>
-                      <span>Offline-First Syncing</span>
-                    </div>
-                    <div className="text-stone-500 text-[11px] pl-4 leading-relaxed font-semibold font-space-grotesk">
-                      Building apps that stay reliable even with unstable internet connections.
-                    </div>
-                  </div>
-
-                  <div className="space-y-0.5">
-                    <div className="flex items-center gap-2 text-stone-900 font-extrabold text-xs">
-                      <span className="text-emerald-500 font-extrabold">&rarr;</span>
-                      <span>Performance Auditing</span>
-                    </div>
-                    <div className="text-stone-500 text-[11px] pl-4 leading-relaxed font-semibold font-space-grotesk">
-                      Finding and fixing performance bottlenecks in JavaScript apps.
-                    </div>
-                  </div>
-                </div>
-
-                <div className="border-t border-stone-200 pt-4">
-                  <p className="text-[10px] text-stone-400 font-bold uppercase tracking-wider mb-2">Books Open on Desk</p>
-                  <ul className="space-y-2 text-xs font-bold text-stone-700">
-                    <li className="flex items-start gap-2">
-                      <span className="text-stone-400">📖</span>
-                      <span>Designing Data-Intensive Applications</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-stone-400">📖</span>
-                      <span>High-Performance Browser Networking</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-
-              {/* Weekly Obsession Chip */}
-              <div className="mt-4 pt-3 border-t border-stone-100 flex items-center gap-2 text-left">
-                <span className="text-[10px] font-bold bg-yellow-100 border border-black px-2 py-0.5 rounded shadow-[1px_1px_0px_#000] shrink-0 font-space-grotesk">
-                  Weekly Obsession
-                </span>
-                <span className="text-xs font-extrabold text-stone-700 truncate" title={obobsession}>
-                  {obobsession}
-                </span>
+                <ul className="space-y-3.5 font-space-grotesk font-extrabold text-stone-800 text-sm py-2">
+                  <li className="flex items-center gap-2.5">
+                    <span className="text-emerald-500 text-lg leading-none">&rarr;</span>
+                    <span>Distributed Systems</span>
+                  </li>
+                  <li className="flex items-center gap-2.5">
+                    <span className="text-emerald-500 text-lg leading-none">&rarr;</span>
+                    <span>Scalable Backend</span>
+                  </li>
+                  <li className="flex items-center gap-2.5">
+                    <span className="text-emerald-500 text-lg leading-none">&rarr;</span>
+                    <span>AI Agents</span>
+                  </li>
+                  <li className="flex items-center gap-2.5">
+                    <span className="text-emerald-500 text-lg leading-none">&rarr;</span>
+                    <span>Performance</span>
+                  </li>
+                </ul>
               </div>
             </div>
 
             {/* Column 3: Developer Terminal */}
-            <div className="border-2 border-black rounded-2xl overflow-hidden bg-stone-950 shadow-[4px_4px_0px_#000] text-left flex flex-col justify-between min-h-[320px]">
+            <div className="border-2 border-black rounded-2xl overflow-hidden bg-stone-950 shadow-[4px_4px_0px_#000] text-left flex flex-col justify-between min-h-[300px]">
               <div>
                 <div className="bg-stone-900 border-b border-black px-4 py-2 flex items-center justify-between">
                   <span className="font-mono text-xs text-stone-400 font-bold">Developer Terminal</span>
@@ -960,47 +903,42 @@ export default function Home() {
                 <div className="p-4 font-mono text-[11px] space-y-3.5 text-stone-300">
                   <div>
                     <div className="text-stone-500">$ whoami</div>
-                    <div className="text-stone-100 font-bold pl-2.5 leading-relaxed">
-                      Full-stack developer who enjoys solving complex problems.
-                    </div>
+                    <div className="text-stone-100 font-bold pl-2.5">Mohit</div>
                   </div>
+                  
                   <div>
-                    <div className="text-stone-500">$ current_focus</div>
-                    <div className="text-stone-100 font-bold pl-2.5">
-                      Building AI-powered software.
-                    </div>
+                    <div className="text-stone-500">$ pwd</div>
+                    <div className="text-stone-100 font-bold pl-2.5">~/building/reewise</div>
                   </div>
+
                   <div>
-                    <div className="text-stone-500">$ status</div>
-                    <div className="text-stone-100 font-bold pl-2.5">
-                      Open to exciting opportunities.
+                    <div className="text-stone-500">$ ls</div>
+                    <div className="text-cyan-400 font-bold pl-2.5 flex gap-2">
+                      <span>reewise/</span>
+                      <span>ai-agents/</span>
+                      <span>ideas/</span>
+                      <span>coffee/</span>
                     </div>
                   </div>
 
-                  <div className="pt-2.5 border-t border-stone-850 space-y-2">
-                    <div className="text-stone-500">$ stats</div>
-                    <div className="space-y-1 pl-2.5 font-mono text-[10px] text-stone-400">
-                      <div className="flex justify-between">
-                        <span>Focus:</span>
-                        <span className="text-emerald-400 font-bold">98%</span>
-                      </div>
-                      <div className="flex justify-between">
-                        <span>Coffee:</span>
-                        <span className="text-stone-200 font-bold">2 cups</span>
-                      </div>
-                      <div className="flex justify-between">
-                        <span>Projects in Progress:</span>
-                        <span className="text-stone-200 font-bold">4</span>
-                      </div>
-                      <div className="flex justify-between">
-                        <span>Books I'm Reading:</span>
-                        <span className="text-stone-200 font-bold">2</span>
-                      </div>
-                      <div className="flex justify-between">
-                        <span>Sleep:</span>
-                        <span className="text-stone-200 font-bold">6h</span>
-                      </div>
+                  <div>
+                    <div className="text-stone-500">$ git status</div>
+                    <div className="text-emerald-400 font-bold pl-2.5 leading-relaxed">
+                      On branch main<br />
+                      Everything committed ✓
                     </div>
+                  </div>
+
+                  <div className="pt-2 border-t border-stone-850">
+                    <div className="text-stone-500">$ {TERMINAL_COMMANDS[terminalIdx].cmd}</div>
+                    <div className="text-stone-100 font-bold pl-2.5">
+                      {TERMINAL_COMMANDS[terminalIdx].out}
+                    </div>
+                  </div>
+
+                  <div className="flex items-center gap-1 pl-0.5 text-stone-500 text-[11px] font-bold">
+                    <span>$</span>
+                    <span className="w-1.5 h-3 bg-stone-400 animate-pulse"></span>
                   </div>
                 </div>
               </div>
@@ -1014,16 +952,13 @@ export default function Home() {
           </div>
 
           {/* Bottom Human connecting banner */}
-          <div className="border-t-2 border-black pt-6 mt-10 flex flex-col md:flex-row items-center gap-6 bg-yellow-50/50 p-4 sm:p-6 rounded-2xl border border-stone-200">
-            <div className="flex-1 space-y-2 text-left">
-              <div className="inline-block bg-pink-200 border border-black px-2.5 py-0.5 rounded font-space-grotesk font-black text-[10px] shadow-[1px_1px_0px_#000] rotate-[-1deg] mb-1">
+          <div className="border-t-2 border-black pt-6 mt-10 flex flex-col sm:flex-row items-center justify-between gap-6 bg-yellow-50/50 p-4 sm:p-6 rounded-2xl border border-stone-200">
+            <div className="text-left space-y-1.5">
+              <h4 className="font-space-grotesk font-black text-xs text-stone-500 uppercase tracking-widest">
                 Current Status
-              </div>
-              <h4 className="text-base font-space-grotesk font-black text-stone-900">
-                Let's Build Something Great
               </h4>
-              <p className="text-stone-600 font-bold text-xs leading-relaxed max-w-xl">
-                I'm always excited to work on challenging software projects, collaborate with great teams, or simply talk tech. If something here caught your eye, I'd love to hear from you. Drop me a message below!
+              <p className="text-stone-900 font-extrabold text-base sm:text-lg font-space-grotesk">
+                Always building something interesting. Let's talk.
               </p>
             </div>
             
