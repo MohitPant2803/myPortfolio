@@ -539,17 +539,9 @@ export default function Home() {
               Autonomous Systems & LLM Workflows
               <Cpu className="w-6 h-6 text-emerald-600" />
             </h3>
-            <p className="text-stone-500 font-semibold text-sm max-w-xl">
-              Factual strategies implemented to manage API fallbacks, state control, and latency patterns.
-            </p>
           </div>
 
-
-
           <div className="border-2 border-black rounded-xl overflow-hidden bg-stone-50">
-            <div className="p-3 bg-stone-200 border-b-2 border-black font-space-grotesk font-black text-xs uppercase tracking-wider text-stone-700">
-              Agent Engineering Strategies & Mechanics
-            </div>
             <div className="divide-y-2 divide-black text-xs font-semibold text-stone-700">
               <div className="grid grid-cols-1 sm:grid-cols-4 p-3 gap-2">
                 <div className="font-bold text-stone-900 sm:col-span-1">LLMs & Prompting</div>
