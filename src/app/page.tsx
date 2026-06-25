@@ -964,6 +964,7 @@ export default function Home() {
 
                 <a 
                   href="mailto:m3hi13245@gmail.com"
+                  onClick={() => handleCopy("m3hi13245@gmail.com", "Email")}
                   className="flex items-center gap-3.5 p-3 border-2 border-black rounded-lg bg-stone-50 cursor-pointer hover:bg-stone-100 hover:translate-y-[-1px] transition-all shadow-[2px_2px_0px_#000] no-underline"
                 >
                   <Mail className="w-4 h-4 text-pink-500 shrink-0" />
@@ -975,6 +976,7 @@ export default function Home() {
 
                 <a 
                   href="tel:8168341986"
+                  onClick={() => handleCopy("8168341986", "Phone")}
                   className="flex items-center gap-3.5 p-3 border-2 border-black rounded-lg bg-stone-50 cursor-pointer hover:bg-stone-100 hover:translate-y-[-1px] transition-all shadow-[2px_2px_0px_#000] no-underline"
                 >
                   <Phone className="w-4 h-4 text-emerald-500 shrink-0" />
