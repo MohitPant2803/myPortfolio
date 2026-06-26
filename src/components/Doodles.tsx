@@ -109,7 +109,7 @@ export const HighlightMarker = ({ className = "text-yellow-200" }: { className?:
     viewBox="0 0 200 40"
     fill="none"
     preserveAspectRatio="none"
-    className={`absolute -z-10 h-full w-full opacity-60 ${className}`}
+    className={`absolute left-0 top-0 -z-10 h-full w-full opacity-60 ${className}`}
   >
     <path
       d="M5 20 C 50 15, 100 25, 195 18"

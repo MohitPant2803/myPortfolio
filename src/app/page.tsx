@@ -216,7 +216,7 @@ export default function Home() {
 
           <h1 className="text-4xl sm:text-6xl font-space-grotesk font-extrabold tracking-tight text-stone-900 leading-tight mb-4">
             Hi, I'm{" "}
-            <span className="relative inline-block px-1">
+            <span className="relative inline-block px-1 whitespace-nowrap">
               Mohit Pant
               <HighlightMarker className="text-pink-200" />
             </span>
