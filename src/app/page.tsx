@@ -224,7 +224,16 @@ export default function Home() {
               AI-powered
               <HighlightMarker className="text-pink-200" />
             </span>{" "}
-            applications, mobile apps, and automation systems.
+            applications,{" "}
+            <span className="relative inline-block px-1 whitespace-nowrap text-stone-950 font-extrabold">
+              mobile apps
+              <HighlightMarker className="text-pink-200" />
+            </span>{" "}
+            and{" "}
+            <span className="relative inline-block px-1 whitespace-nowrap text-stone-950 font-extrabold">
+              automation systems
+              <HighlightMarker className="text-pink-200" />
+            </span>.
           </h2>
           <p className="text-stone-600 font-medium leading-relaxed mb-8 max-w-xl text-base">
             I build production-ready mobile and web applications, AI-powered automation systems, and offline-first software. I focus on developing scalable, high-performance software for startups, businesses, and ambitious ideas.

@@ -112,9 +112,15 @@ export const HighlightMarker = ({ className = "text-yellow-200" }: { className?:
     className={`absolute left-0 top-0 -z-10 h-full w-full opacity-60 ${className}`}
   >
     <path
-      d="M5 20 C 50 15, 100 25, 195 18"
+      d="M5 16 C 60 12, 120 20, 195 16"
       stroke="currentColor"
-      strokeWidth="26"
+      strokeWidth="14"
+      strokeLinecap="round"
+    />
+    <path
+      d="M10 24 C 60 26, 130 20, 190 22"
+      stroke="currentColor"
+      strokeWidth="12"
       strokeLinecap="round"
     />
   </svg>
