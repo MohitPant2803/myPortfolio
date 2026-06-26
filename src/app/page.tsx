@@ -215,15 +215,16 @@ export default function Home() {
           </div>
 
           <h1 className="text-4xl sm:text-6xl font-space-grotesk font-extrabold tracking-tight text-stone-900 leading-tight mb-4">
-            Hi, I'm{" "}
-            <span className="relative inline-block px-1 whitespace-nowrap">
-              Mohit Pant
-              <HighlightMarker className="text-pink-200" />
-            </span>
+            Hi, I'm Mohit Pant
           </h1>
 
           <h2 className="text-xl sm:text-2xl font-space-grotesk font-bold text-stone-700 leading-relaxed mb-6">
-            Full Stack Engineer building AI-powered applications, mobile apps, and automation systems.
+            Full Stack Engineer building{" "}
+            <span className="relative inline-block px-1 whitespace-nowrap text-stone-950 font-extrabold">
+              AI-powered
+              <HighlightMarker className="text-pink-200" />
+            </span>{" "}
+            applications, mobile apps, and automation systems.
           </h2>
           <p className="text-stone-600 font-medium leading-relaxed mb-8 max-w-xl text-base">
             I build production-ready mobile and web applications, AI-powered automation systems, and offline-first software. I focus on developing scalable, high-performance software for startups, businesses, and ambitious ideas.
