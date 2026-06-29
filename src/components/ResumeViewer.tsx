@@ -1,15 +1,10 @@
 "use client";
 
 import React, { useState } from "react";
-import { Download, FileText, X, Printer, Mail, Phone, MapPin } from "lucide-react";
-import { Github, Linkedin } from "./BrandIcons";
+import { Download, FileText, X, Mail, Phone, MapPin } from "lucide-react";
 
 export default function ResumeViewer() {
   const [isOpen, setIsOpen] = useState(false);
-
-  const handlePrint = () => {
-    window.print();
-  };
 
   return (
     <>
@@ -39,13 +34,6 @@ export default function ResumeViewer() {
               </span>
               <div className="flex gap-2">
                 <button
-                  onClick={handlePrint}
-                  className="p-2 hover:bg-stone-200 border border-transparent hover:border-black rounded transition-colors"
-                  title="Print Resume"
-                >
-                  <Printer className="w-4 h-4 text-stone-600" />
-                </button>
-                <button
                   onClick={() => setIsOpen(false)}
                   className="p-2 hover:bg-red-50 border border-transparent hover:border-red-400 text-red-500 rounded transition-colors"
                 >
@@ -58,55 +46,43 @@ export default function ResumeViewer() {
             <div className="flex-1 overflow-y-auto p-6 sm:p-8 font-serif text-stone-900 text-left bg-stone-50/50 leading-normal selection:bg-yellow-100">
               <div className="bg-white p-6 sm:p-10 border-2 border-stone-200 shadow-sm max-w-2xl mx-auto space-y-6">
                 {/* Header */}
-                <div className="text-center border-b-2 border-stone-900 pb-4">
-                  <h1 className="text-3xl font-bold tracking-wide">MOHIT PANT</h1>
-                  <p className="text-sm font-semibold tracking-wide font-sans text-stone-600 mt-1">
-                    Dual Degree (B.Tech + M.Tech) Mining Engineering | IIT Kharagpur
-                  </p>
-                  <div className="flex flex-wrap justify-center gap-x-4 gap-y-1 text-xs font-sans text-stone-500 mt-2">
+                <div className="text-center border-b-2 border-stone-900 pb-3">
+                  <h1 className="text-3xl font-bold tracking-wide text-stone-900">MOHIT PANT</h1>
+                  <div className="flex flex-wrap justify-center gap-x-2 gap-y-0.5 text-xs font-sans text-stone-600 mt-1.5">
                     <a 
                       href="https://mail.google.com/mail/?view=cm&fs=1&to=mohi13245@gmail.com" 
                       target="_blank" 
                       rel="noopener noreferrer" 
-                      className="flex items-center gap-1 hover:underline"
+                      className="hover:underline font-medium"
                     >
-                      <Mail className="w-3 h-3" /> mohi13245@gmail.com
+                      mohi13245@gmail.com
                     </a>
-                    <a href="tel:8168341986" className="flex items-center gap-1 hover:underline">
-                      <Phone className="w-3 h-3" /> +91-8168341986
+                    <span className="text-stone-400">·</span>
+                    <a href="tel:8168341986" className="hover:underline font-medium">
+                      +91-8168341986
                     </a>
-                    <span className="flex items-center gap-1">
-                      <MapPin className="w-3 h-3" /> IIT Kharagpur
-                    </span>
+                    <span className="text-stone-400">·</span>
+                    <a href="https://www.linkedin.com/in/mohit-pant-46790624b/" target="_blank" rel="noopener noreferrer" className="hover:underline font-medium">
+                      LinkedIn
+                    </a>
+                    <span className="text-stone-400">·</span>
+                    <a href="https://github.com/MohitPant2803" target="_blank" rel="noopener noreferrer" className="hover:underline font-medium">
+                      GitHub
+                    </a>
+                    <span className="text-stone-400">·</span>
+                    <a href="https://mohitpant.vercel.app" target="_blank" rel="noopener noreferrer" className="hover:underline font-medium">
+                      Portfolio
+                    </a>
                   </div>
-                  <div className="flex justify-center gap-4 text-xs font-sans text-stone-600 mt-2">
-                    <a href="https://github.com/MohitPant2803" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 hover:underline">
-                      <Github className="w-3.5 h-3.5" /> MohitPant2803
-                    </a>
-                    <a href="https://www.linkedin.com/in/mohit-pant-46790624b/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 hover:underline">
-                      <Linkedin className="w-3.5 h-3.5" /> mohit-pant-46790624b
-                    </a>
-                  </div>
-                </div>
-
-                {/* Education */}
-                <div>
-                  <h2 className="text-base font-bold font-sans border-b border-stone-400 pb-0.5 tracking-wider uppercase text-stone-800 mb-2">
-                    Education
-                  </h2>
-                  <div className="flex justify-between items-start text-xs font-sans">
-                    <div>
-                      <span className="font-bold text-stone-900">Indian Institute of Technology (IIT), Kharagpur</span>
-                      <p className="text-stone-500 italic mt-0.5">Dual Degree (B.Tech + M.Tech) Mining Engineering · CGPA: 7.63 / 10</p>
-                    </div>
-                    <span className="text-stone-500 font-bold shrink-0">Expected 2027</span>
-                  </div>
+                  <p className="text-xs font-semibold font-sans text-stone-500 mt-2">
+                    IIT Kharagpur · Dual Degree (B.Tech + M.Tech) Mining Engineering · Expected 2027 · CGPA: 7.63 / 10
+                  </p>
                 </div>
 
                 {/* Experience */}
                 <div>
-                  <h2 className="text-base font-bold font-sans border-b border-stone-400 pb-0.5 tracking-wider uppercase text-stone-800 mb-3">
-                    Experience
+                  <h2 className="text-sm font-bold font-sans border-b border-stone-400 pb-0.5 tracking-wider uppercase text-stone-900 mb-2.5">
+                    EXPERIENCE
                   </h2>
                   <div className="space-y-3">
                     <div>
@@ -128,19 +104,23 @@ export default function ResumeViewer() {
 
                 {/* Projects */}
                 <div>
-                  <h2 className="text-base font-bold font-sans border-b border-stone-400 pb-0.5 tracking-wider uppercase text-stone-800 mb-3">
-                    Projects
+                  <h2 className="text-sm font-bold font-sans border-b border-stone-400 pb-0.5 tracking-wider uppercase text-stone-900 mb-2.5">
+                    PROJECTS
                   </h2>
-                  <div className="space-y-4">
+                  <div className="space-y-4.5">
                     <div>
                       <div className="flex justify-between items-start text-xs font-sans">
                         <div>
                           <span className="font-bold text-stone-900">ReeWise</span>
-                          <span className="text-stone-500 italic"> — Offline-first flashcard app</span>
+                          <span className="text-stone-400"> (</span>
+                          <a href="https://ree-wise-download-website.vercel.app" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline font-semibold">Live</a>
+                          <span className="text-stone-400 font-semibold"> · </span>
+                          <a href="https://github.com/MohitPant2803/DSA-REVISON-frontend" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline font-semibold">GitHub</a>
+                          <span className="text-stone-400">)</span>
                         </div>
                         <span className="text-stone-500 font-semibold italic">May 2026 – Present</span>
                       </div>
-                      <p className="text-[11px] text-stone-500 font-sans font-medium mt-0.5">React Native · Expo · Node.js · SQLite · MongoDB · Zustand</p>
+                      <p className="text-[10px] text-stone-500 font-sans font-semibold mt-0.5">React Native · Expo · Node.js · SQLite · MongoDB · Zustand</p>
                       <ul className="list-disc list-outside pl-4 text-xs space-y-1 text-stone-700 mt-1">
                         <li>Published offline-first flashcard app on Google Play with 50+ users, 1,200+ cards across 9 subjects; backend deployed on Vercel.</li>
                         <li>Engineered Mutex-based FIFO write queue serializing SQLite mutations, eliminating deadlock crashes on rapid swipes.</li>
@@ -153,11 +133,15 @@ export default function ResumeViewer() {
                       <div className="flex justify-between items-start text-xs font-sans">
                         <div>
                           <span className="font-bold text-stone-900">CompetitorScan</span>
-                          <span className="text-stone-500 italic"> — AI SaaS for competitive intelligence</span>
+                          <span className="text-stone-400"> (</span>
+                          <a href="https://competitor-scan-agent-frontend.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline font-semibold">Live</a>
+                          <span className="text-stone-400 font-semibold"> · </span>
+                          <a href="https://github.com/MohitPant2803/Competitor-Scan-Agent-frontend" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline font-semibold">GitHub</a>
+                          <span className="text-stone-400">)</span>
                         </div>
                         <span className="text-stone-500 font-semibold italic">June 2026</span>
                       </div>
-                      <p className="text-[11px] text-stone-500 font-sans font-medium mt-0.5">Next.js · TypeScript · Node.js · Groq · Llama 3.3 70B · Puppeteer · SSE</p>
+                      <p className="text-[10px] text-stone-500 font-sans font-semibold mt-0.5">Next.js · TypeScript · Node.js · Groq · Llama 3.3 70B · Puppeteer · SSE</p>
                       <ul className="list-disc list-outside pl-4 text-xs space-y-1 text-stone-700 mt-1">
                         <li>AI SaaS for competitive intelligence — parallel Promise DAG across 5 agents cut execution from ~110s to ~40s (60% reduction).</li>
                         <li>Implemented pre-truncation footer regex, achieving 100% social handle accuracy and 50% token reduction on large pages.</li>
@@ -169,11 +153,15 @@ export default function ResumeViewer() {
                       <div className="flex justify-between items-start text-xs font-sans">
                         <div>
                           <span className="font-bold text-stone-900">AI Interview Platform</span>
-                          <span className="text-stone-500 italic"> — Voice-based, CV-aware interview simulator</span>
+                          <span className="text-stone-400"> (</span>
+                          <a href="https://ai-interview-prep-frontend-smoky.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline font-semibold">Live</a>
+                          <span className="text-stone-400 font-semibold"> · </span>
+                          <a href="https://github.com/MohitPant2803/Ai-Interview-Prep-frontend" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline font-semibold">GitHub</a>
+                          <span className="text-stone-400">)</span>
                         </div>
                         <span className="text-stone-500 font-semibold italic">May 2026</span>
                       </div>
-                      <p className="text-[11px] text-stone-500 font-sans font-medium mt-0.5">React · Vite · Node.js · MongoDB · Gemini 2.5 Flash</p>
+                      <p className="text-[10px] text-stone-500 font-sans font-semibold mt-0.5">React · Vite · Node.js · MongoDB · Gemini 2.5 Flash</p>
                       <ul className="list-disc list-outside pl-4 text-xs space-y-1 text-stone-700 mt-1">
                         <li>Built a voice-based, CV-aware interview simulator with AI scoring, behavioral feedback, and real-time speech recognition/synthesis.</li>
                         <li>Reduced React CPU overhead by 95% by isolating AudioWaveform state, eliminating unnecessary parent re-renders during playback.</li>
@@ -185,11 +173,15 @@ export default function ResumeViewer() {
                       <div className="flex justify-between items-start text-xs font-sans">
                         <div>
                           <span className="font-bold text-stone-900">Local Lead Generation Agent</span>
-                          <span className="text-stone-500 italic"> — Autonomous outreach pipeline</span>
+                          <span className="text-stone-400"> (</span>
+                          <a href="https://leadgenerator-backend-pzyw.onrender.com" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline font-semibold">Live</a>
+                          <span className="text-stone-400 font-semibold"> · </span>
+                          <a href="https://github.com/MohitPant2803/LeadGenerator-Backend" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline font-semibold">GitHub</a>
+                          <span className="text-stone-400">)</span>
                         </div>
                         <span className="text-stone-500 font-semibold italic">June 2026</span>
                       </div>
-                      <p className="text-[11px] text-stone-500 font-sans font-medium mt-0.5">Python · Flask · SQLite · Gemini 2.5 · Groq · BeautifulSoup · Geoapify</p>
+                      <p className="text-[10px] text-stone-500 font-sans font-semibold mt-0.5">Python · Flask · SQLite · Gemini 2.5 · Groq · BeautifulSoup · Geoapify</p>
                       <ul className="list-disc list-outside pl-4 text-xs space-y-1 text-stone-700 mt-1">
                         <li>Automated end-to-end lead pipeline: Integrated discovery, SEO audits, and LLM-driven outreach with automated reporting.</li>
                         <li>Built daemon-thread TCP timeout guard (safe_requests_get) preventing anti-bot tarpits from blocking the pipeline thread indefinitely.</li>
@@ -201,22 +193,22 @@ export default function ResumeViewer() {
 
                 {/* Skills */}
                 <div>
-                  <h2 className="text-base font-bold font-sans border-b border-stone-400 pb-0.5 tracking-wider uppercase text-stone-800 mb-2">
-                    Technical Skills
+                  <h2 className="text-sm font-bold font-sans border-b border-stone-400 pb-0.5 tracking-wider uppercase text-stone-900 mb-2">
+                    TECHNICAL SKILLS
                   </h2>
                   <div className="grid grid-cols-2 gap-x-4 gap-y-1.5 text-xs font-sans text-stone-700">
                     <p><span className="font-bold text-stone-900">Languages:</span> C++, Python, JavaScript, TypeScript, SQL</p>
                     <p><span className="font-bold text-stone-900">Technologies:</span> React, React Native, Next.js, Node.js, Express.js, Flask, MongoDB, SQLite</p>
                     <p><span className="font-bold text-stone-900">AI / LLMs:</span> Gemini, Groq, Llama, Prompt Engineering, Multi-Agent Systems</p>
                     <p><span className="font-bold text-stone-900">Tools:</span> Git, GitHub, Firebase, Vercel, Postman, Puppeteer</p>
-                    <p><span className="font-bold text-stone-900">CS Core:</span> Data Structures & Algorithms, OOP, CN, REST API Design</p>
+                    <p><span className="font-bold text-stone-900">CS core:</span> Data Structures & Algorithms, OOP, CN, REST API Design</p>
                   </div>
                 </div>
 
                 {/* Positions of Responsibility */}
                 <div>
-                  <h2 className="text-base font-bold font-sans border-b border-stone-400 pb-0.5 tracking-wider uppercase text-stone-800 mb-3">
-                    Positions of Responsibility
+                  <h2 className="text-sm font-bold font-sans border-b border-stone-400 pb-0.5 tracking-wider uppercase text-stone-900 mb-2.5">
+                    POSITIONS OF RESPONSIBILITY
                   </h2>
                   <div className="space-y-3">
                     <div>
@@ -251,8 +243,8 @@ export default function ResumeViewer() {
 
                 {/* Honours & Activities */}
                 <div>
-                  <h2 className="text-base font-bold font-sans border-b border-stone-400 pb-0.5 tracking-wider uppercase text-stone-800 mb-2">
-                    Honours & Activities
+                  <h2 className="text-sm font-bold font-sans border-b border-stone-400 pb-0.5 tracking-wider uppercase text-stone-900 mb-2">
+                    HONOURS & ACTIVITIES
                   </h2>
                   <ul className="list-disc list-outside pl-4 text-xs space-y-1.5 text-stone-700 mt-1.5">
                     <li>Qualified JEE Advanced (top 5% of 180K+ candidates); solved 500+ DSA problems on LeetCode.</li>
