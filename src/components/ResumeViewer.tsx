@@ -61,22 +61,22 @@ export default function ResumeViewer() {
                 <div className="text-center border-b-2 border-stone-900 pb-4">
                   <h1 className="text-3xl font-bold tracking-wide">MOHIT PANT</h1>
                   <p className="text-sm font-semibold tracking-wide font-sans text-stone-600 mt-1">
-                    Full-Stack Engineer | AI Agent Developer | Dual Degree @ IIT Kharagpur
+                    Dual Degree (B.Tech + M.Tech) Mining Engineering | IIT Kharagpur
                   </p>
                   <div className="flex flex-wrap justify-center gap-x-4 gap-y-1 text-xs font-sans text-stone-500 mt-2">
                     <a 
-                      href="https://mail.google.com/mail/?view=cm&fs=1&to=m3hi13245@gmail.com" 
+                      href="https://mail.google.com/mail/?view=cm&fs=1&to=mohi13245@gmail.com" 
                       target="_blank" 
                       rel="noopener noreferrer" 
                       className="flex items-center gap-1 hover:underline"
                     >
-                      <Mail className="w-3 h-3" /> m3hi13245@gmail.com
+                      <Mail className="w-3 h-3" /> mohi13245@gmail.com
                     </a>
                     <a href="tel:8168341986" className="flex items-center gap-1 hover:underline">
-                      <Phone className="w-3 h-3" /> 8168341986
+                      <Phone className="w-3 h-3" /> +91-8168341986
                     </a>
                     <span className="flex items-center gap-1">
-                      <MapPin className="w-3 h-3" /> Kharagpur, WB
+                      <MapPin className="w-3 h-3" /> IIT Kharagpur
                     </span>
                   </div>
                   <div className="flex justify-center gap-4 text-xs font-sans text-stone-600 mt-2">
@@ -97,31 +97,30 @@ export default function ResumeViewer() {
                   <div className="flex justify-between items-start text-xs font-sans">
                     <div>
                       <span className="font-bold text-stone-900">Indian Institute of Technology (IIT), Kharagpur</span>
-                      <p className="text-stone-500 italic mt-0.5">Dual Degree (Integrated Bachelor + Master of Technology)</p>
+                      <p className="text-stone-500 italic mt-0.5">Dual Degree (B.Tech + M.Tech) Mining Engineering · CGPA: 7.63 / 10</p>
                     </div>
-                    <span className="text-stone-500 font-bold shrink-0">Graduation 2027</span>
+                    <span className="text-stone-500 font-bold shrink-0">Expected 2027</span>
                   </div>
                 </div>
 
                 {/* Experience */}
                 <div>
                   <h2 className="text-base font-bold font-sans border-b border-stone-400 pb-0.5 tracking-wider uppercase text-stone-800 mb-3">
-                    Professional Experience
+                    Experience
                   </h2>
                   <div className="space-y-3">
                     <div>
                       <div className="flex justify-between items-start text-xs font-sans">
                         <div>
-                          <span className="font-bold text-stone-900">CareQ</span>
-                          <span className="text-stone-500 italic"> — Remote Full Stack Developer</span>
+                          <span className="font-bold text-stone-900">Full Stack Developer</span>
+                          <span className="text-stone-500 italic"> — CareQ (Remote, Startup)</span>
                         </div>
-                        <span className="text-stone-500 font-semibold italic">2024</span>
+                        <span className="text-stone-500 font-semibold italic">May 2026 – July 2026</span>
                       </div>
-                      <ul className="list-disc list-outside pl-4 text-xs space-y-1.5 text-stone-700 mt-1.5">
-                        <li>Collaborated with engineering teams to plan, develop, and deliver full-stack features.</li>
-                        <li>Designed flexible database schemas in MongoDB to optimize queries and handle data models.</li>
-                        <li>Built and modified RESTful API endpoints using Node.js and Express backend frameworks.</li>
-                        <li>Integrated UI views and state components on the React client side.</li>
+                      <ul className="list-disc list-outside pl-4 text-xs space-y-1 text-stone-700 mt-1.5">
+                        <li>Built and shipped production-ready full-stack features in a cross-functional team using React, Node.js, Express, and MongoDB.</li>
+                        <li>Integrated REST APIs end-to-end — from schema design to frontend — reducing manual steps in the onboarding pipeline.</li>
+                        <li>Delivered features in short sprint cycles, directly impacting a live healthcare product used by real customers.</li>
                       </ul>
                     </div>
                   </div>
@@ -130,37 +129,72 @@ export default function ResumeViewer() {
                 {/* Projects */}
                 <div>
                   <h2 className="text-base font-bold font-sans border-b border-stone-400 pb-0.5 tracking-wider uppercase text-stone-800 mb-3">
-                    Featured Engineering Projects
+                    Projects
                   </h2>
-                  <div className="space-y-3.5">
+                  <div className="space-y-4">
                     <div>
                       <div className="flex justify-between items-start text-xs font-sans">
-                        <span className="font-bold text-stone-900">ReeWise — Offline-First Spaced Repetition App</span>
-                        <span className="text-stone-500 font-semibold italic">SQLite, React Native, Zustand</span>
+                        <div>
+                          <span className="font-bold text-stone-900">ReeWise</span>
+                          <span className="text-stone-500 italic"> — Offline-first flashcard app</span>
+                        </div>
+                        <span className="text-stone-500 font-semibold italic">May 2026 – Present</span>
                       </div>
-                      <p className="text-xs text-stone-700 mt-1">
-                        Built a spacing active-recall system using Expo. Designed a local SQLite synchronization ledger that merges offline changes with remote MongoDB stores using vector clocks and high-precision timestamps.
-                      </p>
+                      <p className="text-[11px] text-stone-500 font-sans font-medium mt-0.5">React Native · Expo · Node.js · SQLite · MongoDB · Zustand</p>
+                      <ul className="list-disc list-outside pl-4 text-xs space-y-1 text-stone-700 mt-1">
+                        <li>Published offline-first flashcard app on Google Play with 50+ users, 1,200+ cards across 9 subjects; backend deployed on Vercel.</li>
+                        <li>Engineered Mutex-based FIFO write queue serializing SQLite mutations, eliminating deadlock crashes on rapid swipes.</li>
+                        <li>Cut startup latency by 75% (2s to &lt;500ms) by optimizing DB seeding to version-mismatch events and batching Zustand hydration.</li>
+                        <li>Split schema into cards_metadata / cards_content, cutting React Native bridge payload by 80% during swipe renders.</li>
+                      </ul>
                     </div>
 
                     <div>
                       <div className="flex justify-between items-start text-xs font-sans">
-                        <span className="font-bold text-stone-900">CompetitorScan — Real-time AI Scraper & SSE Streamer</span>
-                        <span className="text-stone-500 font-semibold italic">TypeScript, Puppeteer, Groq, SSE</span>
+                        <div>
+                          <span className="font-bold text-stone-900">CompetitorScan</span>
+                          <span className="text-stone-500 italic"> — AI SaaS for competitive intelligence</span>
+                        </div>
+                        <span className="text-stone-500 font-semibold italic">June 2026</span>
                       </div>
-                      <p className="text-xs text-stone-700 mt-1">
-                        Orchestrates concurrent headless Puppeteer nodes to monitor landing pages. Parses HTML nodes into clean markdown via Jina Reader, feeding inferences to Llama-3, streamed directly to Next.js clients via Server-Sent Events.
-                      </p>
+                      <p className="text-[11px] text-stone-500 font-sans font-medium mt-0.5">Next.js · TypeScript · Node.js · Groq · Llama 3.3 70B · Puppeteer · SSE</p>
+                      <ul className="list-disc list-outside pl-4 text-xs space-y-1 text-stone-700 mt-1">
+                        <li>AI SaaS for competitive intelligence — parallel Promise DAG across 5 agents cut execution from ~110s to ~40s (60% reduction).</li>
+                        <li>Implemented pre-truncation footer regex, achieving 100% social handle accuracy and 50% token reduction on large pages.</li>
+                        <li>Isolated LLM fallback state per request via AsyncLocalStorage, preventing degradedMode bleeding across concurrent users.</li>
+                      </ul>
                     </div>
 
                     <div>
                       <div className="flex justify-between items-start text-xs font-sans">
-                        <span className="font-bold text-stone-900">Lead Generation Agent — Autonomous Outreach Pipeline</span>
-                        <span className="text-stone-500 font-semibold italic">Python, Gemini, PageSpeed, Geoapify</span>
+                        <div>
+                          <span className="font-bold text-stone-900">AI Interview Platform</span>
+                          <span className="text-stone-500 italic"> — Voice-based, CV-aware interview simulator</span>
+                        </div>
+                        <span className="text-stone-500 font-semibold italic">May 2026</span>
                       </div>
-                      <p className="text-xs text-stone-700 mt-1">
-                        Runs geo-targeted local business discovery, executes site performance audits via Google PageSpeed Insights, and ranks targets. Writes hyper-personalized outreach copies based on the specific core web vital failures detected.
-                      </p>
+                      <p className="text-[11px] text-stone-500 font-sans font-medium mt-0.5">React · Vite · Node.js · MongoDB · Gemini 2.5 Flash</p>
+                      <ul className="list-disc list-outside pl-4 text-xs space-y-1 text-stone-700 mt-1">
+                        <li>Built a voice-based, CV-aware interview simulator with AI scoring, behavioral feedback, and real-time speech recognition/synthesis.</li>
+                        <li>Reduced React CPU overhead by 95% by isolating AudioWaveform state, eliminating unnecessary parent re-renders during playback.</li>
+                        <li>Fixed stale closures in Web Speech API via useRef + useState sync; cut MongoDB cold-start from 1.5s to &lt;80ms.</li>
+                      </ul>
+                    </div>
+
+                    <div>
+                      <div className="flex justify-between items-start text-xs font-sans">
+                        <div>
+                          <span className="font-bold text-stone-900">Local Lead Generation Agent</span>
+                          <span className="text-stone-500 italic"> — Autonomous outreach pipeline</span>
+                        </div>
+                        <span className="text-stone-500 font-semibold italic">June 2026</span>
+                      </div>
+                      <p className="text-[11px] text-stone-500 font-sans font-medium mt-0.5">Python · Flask · SQLite · Gemini 2.5 · Groq · BeautifulSoup · Geoapify</p>
+                      <ul className="list-disc list-outside pl-4 text-xs space-y-1 text-stone-700 mt-1">
+                        <li>Automated end-to-end lead pipeline: Integrated discovery, SEO audits, and LLM-driven outreach with automated reporting.</li>
+                        <li>Built daemon-thread TCP timeout guard (safe_requests_get) preventing anti-bot tarpits from blocking the pipeline thread indefinitely.</li>
+                        <li>Built resilient LLM cascade: Tiered Gemini, Groq, and templates to guarantee 100% email generation uptime during API outages.</li>
+                      </ul>
                     </div>
                   </div>
                 </div>
@@ -168,16 +202,62 @@ export default function ResumeViewer() {
                 {/* Skills */}
                 <div>
                   <h2 className="text-base font-bold font-sans border-b border-stone-400 pb-0.5 tracking-wider uppercase text-stone-800 mb-2">
-                    Technical Skills Summary
+                    Technical Skills
                   </h2>
                   <div className="grid grid-cols-2 gap-x-4 gap-y-1.5 text-xs font-sans text-stone-700">
-                    <p><span className="font-bold text-stone-900">Languages:</span> C++, Python, TypeScript, SQL</p>
-                    <p><span className="font-bold text-stone-900">Frontend:</span> React Native, React, Next.js, Expo</p>
-                    <p><span className="font-bold text-stone-900">Backend:</span> Node.js, Express, FastAPI</p>
-                    <p><span className="font-bold text-stone-900">Databases:</span> MongoDB, SQLite</p>
-                    <p><span className="font-bold text-stone-900">AI Stack:</span> Gemini Pro, Groq, Whisper API</p>
-                    <p><span className="font-bold text-stone-900">Tools:</span> Git, GitHub, Vercel, Render</p>
+                    <p><span className="font-bold text-stone-900">Languages:</span> C++, Python, JavaScript, TypeScript, SQL</p>
+                    <p><span className="font-bold text-stone-900">Technologies:</span> React, React Native, Next.js, Node.js, Express.js, Flask, MongoDB, SQLite</p>
+                    <p><span className="font-bold text-stone-900">AI / LLMs:</span> Gemini, Groq, Llama, Prompt Engineering, Multi-Agent Systems</p>
+                    <p><span className="font-bold text-stone-900">Tools:</span> Git, GitHub, Firebase, Vercel, Postman, Puppeteer</p>
+                    <p><span className="font-bold text-stone-900">CS Core:</span> Data Structures & Algorithms, OOP, CN, REST API Design</p>
                   </div>
+                </div>
+
+                {/* Positions of Responsibility */}
+                <div>
+                  <h2 className="text-base font-bold font-sans border-b border-stone-400 pb-0.5 tracking-wider uppercase text-stone-800 mb-3">
+                    Positions of Responsibility
+                  </h2>
+                  <div className="space-y-3">
+                    <div>
+                      <div className="flex justify-between items-start text-xs font-sans">
+                        <div>
+                          <span className="font-bold text-stone-900">Events & Publicity Head</span>
+                          <span className="text-stone-500 italic"> — Students' Branding & Relations Cell, IIT Kharagpur</span>
+                        </div>
+                        <span className="text-stone-500 font-semibold italic">Jan '23 – Mar '25</span>
+                      </div>
+                      <ul className="list-disc list-outside pl-4 text-xs space-y-1 text-stone-700 mt-1.5">
+                        <li>Led a 15-member team for nationwide outreach, reaching 10,000+ schools and driving 200+ team registrations (33% YoY growth).</li>
+                        <li>Secured 50+ media and alumni features nationwide; raised a record ₹5 lakh in sponsorships — a new organisational benchmark.</li>
+                      </ul>
+                    </div>
+
+                    <div>
+                      <div className="flex justify-between items-start text-xs font-sans">
+                        <div>
+                          <span className="font-bold text-stone-900">UG Coordinator</span>
+                          <span className="text-stone-500 italic"> — GYWS, IIT Kharagpur</span>
+                        </div>
+                        <span className="text-stone-500 font-semibold italic">Dec '22 – Mar '25</span>
+                      </div>
+                      <ul className="list-disc list-outside pl-4 text-xs space-y-1 text-stone-700 mt-1.5">
+                        <li>Led 120+ members at GYWS; spearheaded 150+ volunteers across 20 hostels generating ₹5L via outreach to 8,000+ rooms.</li>
+                        <li>Mentored 250+ students at Jagriti Vidya Mandir; guided peers from other colleges to establish NGOs and run community events.</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Honours & Activities */}
+                <div>
+                  <h2 className="text-base font-bold font-sans border-b border-stone-400 pb-0.5 tracking-wider uppercase text-stone-800 mb-2">
+                    Honours & Activities
+                  </h2>
+                  <ul className="list-disc list-outside pl-4 text-xs space-y-1.5 text-stone-700 mt-1.5">
+                    <li>Qualified JEE Advanced (top 5% of 180K+ candidates); solved 500+ DSA problems on LeetCode.</li>
+                    <li>Gold — Intra-Hall Volleyball Tournament; completed multiple marathons and an ultramarathon for social causes.</li>
+                  </ul>
                 </div>
               </div>
             </div>

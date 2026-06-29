@@ -958,16 +958,16 @@ export default function Home() {
                 </a>
 
                 <a 
-                  href="https://mail.google.com/mail/?view=cm&fs=1&to=m3hi13245@gmail.com"
+                  href="https://mail.google.com/mail/?view=cm&fs=1&to=mohi13245@gmail.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  onClick={() => handleCopy("m3hi13245@gmail.com", "Email")}
+                  onClick={() => handleCopy("mohi13245@gmail.com", "Email")}
                   className="flex items-center gap-3.5 p-3 border-2 border-black rounded-lg bg-stone-50 cursor-pointer hover:bg-stone-100 hover:translate-y-[-1px] transition-all shadow-[2px_2px_0px_#000] no-underline"
                 >
                   <Mail className="w-4 h-4 text-pink-500 shrink-0" />
                   <div className="flex-1 text-left">
                     <div className="text-[10px] text-stone-400 uppercase tracking-wider">Email Address</div>
-                    <div className="text-xs sm:text-sm text-stone-700 truncate">m3hi13245@gmail.com</div>
+                    <div className="text-xs sm:text-sm text-stone-700 truncate">mohi13245@gmail.com</div>
                   </div>
                 </a>
 
